@@ -131,7 +131,7 @@
                         <div class="lg:hidden block font-bold ">
 
 
-                            <a href="tel:87781647391">8 977 586 21 20</a>
+                            <a href="tel:89775862120">8 977 586 21 20</a>
 
                         </div>
 
@@ -151,7 +151,7 @@
                         <!--Menu-->
                         <div class="w-full lg:px-0 px-5 flex-grow lg:flex lg:items-center lg:w-auto lg:relative absolute lg:top-0 top-16 left-0 z-50"
                             :class="{ 'block shadow-3xl': isOpen, 'hidden': !isOpen, 'bg-primary' : isOpen }"
-                            @click.away="isOpen = false" x-show.transition="true">
+                            @click.away="isOpen = false" x-cloak x-show.transition="true">
                             <ul class="pt-6 lg:pt-0 list-reset lg:flex items-center uppercase text-sm font-bold">
                                 <li class="mr-3">
                                     <a href="/" class="cursor-pointer inline-block py-2 px-2  no-underline">
@@ -239,44 +239,6 @@
 
 
 
-        <div x-cloak class="overflow-auto" style="background-color: rgba(0,0,0,0.5)" x-show="isDialogOpen"
-            :class="{ 'fixed inset-0 z-60 flex items-center justify-center': isDialogOpen }">
-
-            <div class="bg-white shadow-2xl m-4 sm:m-8 text-black" x-show="isDialogOpen"
-                @click.away="isDialogOpen = false">
-                <div class="flex justify-between items-center border-b border-primary border-opacity-20 p-2 text-xl">
-                    <h6 class="text-xl font-bold">Условия акции</h6>
-                    <button type="button" @click="isDialogOpen = false">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                    </button>
-                </div>
-                <div class="p-5">
-                    <p class="mb-5">
-                    <h3 class="font-bold pb-5"> Условия акции</h3>
-                    В настоящее время, наша компания предоставляет акцию только клиентам,</br> которые заказали услугу
-                    от
-                    100
-                    000 (сто тысяч) тенге.
-                    <h3 class="font-bold py-5"> Компания в праве отказать в акции, если:</h3>
-                    <ul>
-                        <li>Если срок действия акции истек на данный момент;</li>
-                        <li>Заказчик не продоставил в обговоренный срок информацию;</li>
-                        <li>Заказчик представлил контент неподобающего содержания;</li>
-                    </ul>
-
-                    </p>
-
-                </div>
-            </div>
-        </div>
-
-
-
-
         <section id="home"
             class="text-white dark:bg-primary dark:text-white home w-full relative overflow-hidden flex flex-col justify-center items-center ">
 
@@ -293,9 +255,9 @@
                 <div class="container">
                     <div
                         class="text-center flex flex-col text-left lg:text-center lg:items-center items-start relative z-50 p-5">
-                        <h1 class="home__title lg:text-8xl text-3x1 mb-5 lg:mt-0 mt-2 lg:text-center text-left ">
+                        <h1 class="home__title lg:text-[60px] text-3x1 mb-5 lg:mt-0 mt-2 lg:text-center text-left ">
                             Создание
-                            сайтов<br> в Москве
+                            сайтов в Москве
                         </h1>
                         <p class="lg:leading-9 lg:text-2xl text-1x1 lg:p-0 text-left lg:text-center text-lg">
                             Разрабатываем адаптивные сайты для сферы товаров и услуг.<br> Доступно передаем ценность
