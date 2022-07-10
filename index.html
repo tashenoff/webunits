@@ -149,7 +149,7 @@
 
 
                         <!--Menu-->
-                        <div class="w-full lg:px-0 px-5 flex-grow lg:flex lg:items-center lg:w-auto lg:relative absolute lg:top-0 top-20 left-0 z-50"
+                        <div class="w-full lg:px-0 px-5 flex-grow lg:flex lg:items-center lg:w-auto lg:relative absolute lg:top-0 top-16 left-0 z-50"
                             :class="{ 'block shadow-3xl': isOpen, 'hidden': !isOpen, 'bg-primary' : isOpen }"
                             @click.away="isOpen = false" x-show.transition="true">
                             <ul class="pt-6 lg:pt-0 list-reset lg:flex items-center uppercase text-sm font-bold">
@@ -1318,7 +1318,7 @@
 
             <div class=" flex w-full items-center justify-center relative">
                 <div
-                    class="bg-white translate-y-16  group-hover:translate-y-0 transition-all duration-700  bg-opacity-30 absolute border border-white border-opacity-30 bottom-0 z-50 w-[150px] h-[55px] flex items-center justify-center">
+                    class="bg-white lg:translate-y-16  lg:group-hover:translate-y-0 transition-all duration-700  bg-opacity-30 absolute border border-white border-opacity-30 bottom-0 z-50 w-[150px] h-[55px] flex items-center justify-center">
                     <a href=""
                         class="group slider__left-arrow hover:bg-white border-r text-white hover:text-primary border-white border-opacity-30 w-full h-full flex items-center justify-center">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
@@ -1721,13 +1721,13 @@
                 breakpoints: {
                     // when window width is >= 320px
                     320: {
-                        slidesPerView: 1.5,
-                        spaceBetween: 20
+                        slidesPerView: 1,
+                        spaceBetween: 10
                     },
                     // when window width is >= 480px
                     480: {
-                        slidesPerView: 3,
-                        spaceBetween: 30
+                        slidesPerView: 1,
+                        spaceBetween: 10
                     },
                     // when window width is >= 640px
                     640: {
