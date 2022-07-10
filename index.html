@@ -1,0 +1,1755 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href='https://webunits.ru/staticfiles/css/style.min.css'> -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="https://webunits.ru/staticfiles/css/starts.css" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link href="main.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/gh/alpine-collective/alpine-magic-helpers@1.2.x/dist/scroll.min.js"
+        defer></script>
+    <script type="text/javascript" src="https://webunits.ru/staticfiles/js/main.js" defer></script>
+    <meta name="title" content="Создание сайтов Москва Webunits.ru">
+    <meta name="description"
+        content="Создание сайтов в Москве - Webunits.ru. Заказать создание сайта Москва. ☎ +7 9775862120. Разработка сайтов Москва. Сайты под ключ">
+    <meta name="mailru-domain" content="SpM0GUjJRUsbPqR2" />
+    <title>😎Webunits.ru - создание сайтов в Москве</title>
+
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+
+
+                    scale: {
+                        '175': '1.5',
+                    },
+
+                    display: ['hover', 'focus', 'group-hover'],
+                    textOpacity: ['hover', 'focus', 'group-hover'],
+                    translate: ['group-hover', 'hover'],
+                    scale: ['hover', 'focus', 'group-hover'],
+                    transform: ['hover', 'focus', 'group-hover'],
+                    borderRadius: {
+                        'none': '0',
+                        'sm': '0.125rem',
+                        DEFAULT: '0.25rem',
+                        DEFAULT: '4px',
+                        'md': '0.375rem',
+                        'lg': '0.3rem',
+                        'full': '9999px',
+                        'large': '12px',
+                    },
+
+                    container: {
+                        screens: {
+                            sm: "100%",
+                            md: "100%",
+                            lg: "1140px",
+                            xl: "1140px"
+                        }
+                    },
+
+                    zIndex: {
+                        '40': '40',
+                        '60': '60',
+                    },
+                    colors: {
+                        primary: '#010101',
+                        darkLight: '#0c162d',
+                        primarylight: '#9361e2',
+                        secondary: '#ff0081',
+                        secondaryLight: '#ef238a',
+                        green: '#47E189',
+                        greenDark: '#42cf7e',
+                        black: '#333',
+                        white: '#fff',
+                        red: '#e045e6',
+                        gray: '#F4F4F4',
+                        blueLight: '#c3d9f6'
+                    }
+                }
+            }
+        }
+
+        var myNav = document.getElementById("nav");
+
+        window.onscroll = function () {
+            "use strict";
+            if (document.body.scrollTop >= 280 || document.documentElement.scrollTop >= 280) {
+                myNav.classList.add("scroll");
+            } else {
+                myNav.classList.remove("scroll");
+            }
+        };
+    </script>
+
+</head>
+
+<body class="bg-gray flex flex-col h-full" x-data="{ 'isDialogOpen': false, 'darkMode': false }"
+    @keydown.escape="isDialogOpen = false">
+
+    <div style=" flex: 1 0 auto;">
+
+
+
+        <div
+            class="flex text-black w-full justify-center lg:px-0 z-60  mx-auto delay-100 transition-colors duration-300 ease-in-out ">
+
+
+
+
+            <div class="lg:px-10 flex w-full items-center text-white fixed z-60 dark:bg-primary text-black shadow-md border-b border-white border-opacity-25"
+                x-data="{ atTop: true }" :class="{ 'bg-primary bg-opacity-90 ' : !atTop }"
+                @scroll.window="atTop = (window.pageYOffset > 40) ? false : true">
+                <div class="navbar w-full flex justify-center dark:text-white">
+                    <nav class="flex items-center lg:px-0 px-2 justify-between relative z-40 flex-wrap lg:py-6 py-3 fixed w-full top-0"
+                        x-data="{ isOpen: false }" @keydown.escape="isOpen = false"
+                        :class="{ 'shadow-lg bg-transparent' : isOpen }">
+
+                        <!--Logo etc-->
+                        <div class="pl-5 flex items-center flex-shrink-0 text-white mr-6">
+                            <img class="w-[25px] h-[25px] mr-2" src="img/logow.svg" alt="">
+                            <a class="font-bold uppercase" href="/">
+                                WebUnits
+                            </a>
+                        </div>
+
+                        <div class="lg:hidden block font-bold ">
+
+
+                            <a href="tel:87781647391">8 977 586 21 20</a>
+
+                        </div>
+
+                        <!--Toggle button (hidden on large screens)-->
+                        <button @click="isOpen = !isOpen" type="button"
+                            class="block lg:hidden p-2 text-white hover:text-white focus:outline-none focus:text-white"
+                            :class="{ 'transition transform-180': isOpen }">
+                            <svg class="h-6 w-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path x-show="isOpen" fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z" />
+                                <path x-show="!isOpen" fill-rule="evenodd"
+                                    d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z" />
+                            </svg>
+                        </button>
+
+
+                        <!--Menu-->
+                        <div class="w-full lg:px-0 px-5 flex-grow lg:flex lg:items-center lg:w-auto lg:relative absolute lg:top-0 top-20 left-0 z-50"
+                            :class="{ 'block shadow-3xl': isOpen, 'hidden': !isOpen, 'bg-primary' : isOpen }"
+                            @click.away="isOpen = false" x-show.transition="true">
+                            <ul class="pt-6 lg:pt-0 list-reset lg:flex items-center uppercase text-sm font-bold">
+                                <li class="mr-3">
+                                    <a href="/" class="cursor-pointer inline-block py-2 px-2  no-underline">
+                                        Главная</a>
+                                    </a>
+                                </li>
+                                <li class="mr-3">
+                                    <a class="cursor-pointer inline-block  no-underline hover:text-gray-200 hover:text-underline py-2 px-2"
+                                        @click="$scroll('#about'), isOpen = false">
+                                        О нас
+                                    </a>
+                                </li>
+
+                                <li class="mr-3">
+                                    <a class="cursor-pointer inline-block  no-underline hover:text-gray-200 hover:text-underline py-2 px-2"
+                                        @click="$scroll('#folio'), isOpen = false">
+                                        Наши работы
+                                    </a>
+                                </li>
+
+                                <!-- <li class="mr-3">
+                            <a class="cursor-pointer animate-pulse inline-block  no-underline hover:text-gray-200 hover:text-underline py-2 px-2"
+                                @click="$scroll('#sale'), isOpen = false">
+                                Акция недели
+                            </a>
+                        </li> -->
+
+                                <!-- <li class="mr-3">
+                            <a class="cursor-pointer inline-block  no-underline hover:text-gray-200 hover:text-underline py-2 px-2"
+                                @click="$scroll('#product'), isOpen = false">Продукты
+                            </a>
+                        </li> -->
+
+                                <!-- <li class="mr-3">
+                            <a href="/articles/"
+                                class="cursor-pointer inline-block  no-underline hover:text-gray-200 hover:text-underline py-2 px-2">Статьи
+                            </a>
+                        </li> -->
+
+
+                                <!-- <li class="mr-3">
+                <a class="inline-block text-white no-underline hover:text-gray-200 hover:text-underline py-2 px-2"
+                    href="#" @click="$scroll('#second'), isOpen = false">отзывы
+                </a>
+            </li> -->
+
+
+                                <li class="mr-3 lg:mb-0 mb-5">
+                                    <a class="cursor-pointer inline-block  no-underline hover:text-gray-200 hover:text-underline py-2 px-2"
+                                        @click="$scroll('#contact'), isOpen = false">Контакты
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+
+
+
+                <div class="navbar__right justify-end w-full items-center relative z-50 lg:flex hidden ">
+                    <div class="pr-5 font-bold flex">
+                        <div class="flex items-center mr-5">
+
+                        </div>
+                        <div class="flex items-center dark:text-white">
+
+
+                            <a href="tel:89775862120">8 977 586 21 20</a>
+
+                        </div>
+                    </div>
+                    <a href="form"
+                        class="bg-secondary hover:bg-secondaryLight transition-all px-5 uppercase text-xs font-bold tracking-widest py-3 rounded-lg">Заказать
+                        звонок</a>
+
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <div x-cloak class="overflow-auto" style="background-color: rgba(0,0,0,0.5)" x-show="isDialogOpen"
+            :class="{ 'fixed inset-0 z-60 flex items-center justify-center': isDialogOpen }">
+
+            <div class="bg-white shadow-2xl m-4 sm:m-8 text-black" x-show="isDialogOpen"
+                @click.away="isDialogOpen = false">
+                <div class="flex justify-between items-center border-b border-primary border-opacity-20 p-2 text-xl">
+                    <h6 class="text-xl font-bold">Условия акции</h6>
+                    <button type="button" @click="isDialogOpen = false">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="p-5">
+                    <p class="mb-5">
+                    <h3 class="font-bold pb-5"> Условия акции</h3>
+                    В настоящее время, наша компания предоставляет акцию только клиентам,</br> которые заказали услугу
+                    от
+                    100
+                    000 (сто тысяч) тенге.
+                    <h3 class="font-bold py-5"> Компания в праве отказать в акции, если:</h3>
+                    <ul>
+                        <li>Если срок действия акции истек на данный момент;</li>
+                        <li>Заказчик не продоставил в обговоренный срок информацию;</li>
+                        <li>Заказчик представлил контент неподобающего содержания;</li>
+                    </ul>
+
+                    </p>
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <section id="home"
+            class="text-white dark:bg-primary dark:text-white home w-full relative overflow-hidden flex flex-col justify-center items-center ">
+
+
+
+            <div class="relative w-full overflow-hidden flex flex-col items-center justify-center z-40 h-full">
+                <div class="background absolute w-full top-0 left-0 z-50">
+                    <div class="star1 star"></div>
+                    <div class="star2 star"></div>
+                    <div class="star3 star"></div>
+                    <div class="star4 star"></div>
+                </div>
+
+                <div class="container">
+                    <div
+                        class="text-center flex flex-col text-left lg:text-center lg:items-center items-start relative z-50 p-5">
+                        <h1 class="home__title lg:text-8xl text-3x1 mb-5 lg:mt-0 mt-2 lg:text-center text-left ">
+                            Создание
+                            сайтов<br> в Москве
+                        </h1>
+                        <p class="lg:leading-9 lg:text-2xl text-1x1 lg:p-0 text-left lg:text-center text-lg">
+                            Разрабатываем адаптивные сайты для сферы товаров и услуг.<br> Доступно передаем ценность
+                            вашего
+                            продукта
+                        <ul class="mt-5 lg:py-5 py-1 flex lg:flex-row flex-col lg:text-lg text-sm">
+                            <li class="lg:p-2 uppercase tracking-wide font-bold  py-2 flex">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                                </svg> <span> Поэтапная оплата</span>
+                            </li>
+
+                            <li class="lg:p-2 uppercase tracking-wide font-bold  py-2 flex">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                                </svg> <span> Лучшие цены</span>
+                            </li>
+
+                            <li class="lg:p-2 uppercase tracking-wide font-bold  py-2 flex">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                                </svg> <span> Результативно</span>
+                            </li>
+
+                        </ul>
+                        </p>
+
+                        <a href="form"
+                            class="focus:outline-none lg:w-1/3 w-full py-4 bg-secondary hover:bg-secondaryLight transition-all px-6 text-white  text-black rounded-lg mt-5 uppercase text-sm tracking-wide font-bold cursor-pointer ">
+                            Оставить заявку</a>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+            <div
+                class="absolute lg:bottom-10 bottom-0 z-50 lg:border-t border-white absolute border-opacity-25 w-full flex items-center flex-col justify-center">
+                <div
+                    class="p-5 transform rotate-45 lg:border border-white border-opacity-25 relative -top-5 lg:bg-primary flex items-center justify-center">
+                    <div class="transform -rotate-45 absolute z-50">
+                        <svg @click="$scroll('#about')" xmlns="http://www.w3.org/2000/svg"
+                            class="h-4 w-4 text-white  cursor-pointer  animate-bounce" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+
+        </section>
+
+
+
+        <section id="about" class="bg-gray">
+
+            <div class="relative -top-14">
+                <div
+                    class="top-14 lg:mb-0 lg:py-20 p-5 z-50 flex flex-col items-center text-left lg:text-center relative bg-white">
+
+                    <div class="mt-5 flex lg:items-center items-start flex-col ">
+                        <h1 class="uppercase font-bold">Хотите заказать сайт в Москве у надежной компании?</h1>
+                        <span class="lg:text-4xl mt-5 text-3x1 home__sub-title">О нас</span>
+                        <div class="w-10 h-1 bg-secondary lg:mt-10 mt-5"></div>
+                    </div>
+
+                    <p class="lg:leading-9 lg:px-5 lg:my-10 lg:pb-0 pb-10 my-5 lg:w-1/2 w-full lg:text-2xl text-lg  ">
+
+                        Для наших специалистов главное - понимать цели заказчика, чтобы предложить
+                        инструменты
+                        для
+                        достижения максимально возможного результата. Мы имеем опыт работы в различных отраслях: от
+                        магазинов и
+                        ресторанов до транспортных и инжиниринговых компаний.
+                    </p>
+                </div>
+
+
+                <div class="relative z-50">
+
+                    <div class="container mx-auto">
+
+
+
+                        <div class="flex lg:flex-row flex-col items-center ">
+
+                            <div class="lg:w-1/2 w-full">
+
+                                <div class="flex flex-col">
+
+                                    <div
+                                        class="bg-white flex flex-row  items-center p-5 lg:m-2 m-5  mb-2 border border-primary border-opacity-10 rounded-lg lg:text-left text-center">
+
+                                        <div class="rounded-full bg-gray lg:mb-0 mb-5 lg:block hidden ">
+
+                                            <svg width="68" height="68" viewBox="0 0 68 68" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="34" cy="34" r="34" fill="#F4F4F4" />
+                                                <path d="M27 23.125H19.6875V24.75H27V23.125Z" fill="#FF0081" />
+                                                <path d="M32.6875 23.125H28.625V24.75H32.6875V23.125Z" fill="#FF0081" />
+                                                <path d="M27 35.3125H19.6875V36.9375H27V35.3125Z" fill="#FF0081" />
+                                                <path d="M32.6875 35.3125H28.625V36.9375H32.6875V35.3125Z"
+                                                    fill="#FF0081" />
+                                                <path d="M24.5625 31.25H19.6875V32.875H24.5625V31.25Z" fill="#FF0081" />
+                                                <path d="M40 31.25H37.5625V32.875H40V31.25Z" fill="#FF0081" />
+                                                <path d="M35.9375 31.25H26.1875V32.875H35.9375V31.25Z" fill="#FF0081" />
+                                                <path d="M33.5 27.1875H30.25V28.8125H33.5V27.1875Z" fill="#FF0081" />
+                                                <path d="M28.625 27.1875H19.6875V28.8125H28.625V27.1875Z"
+                                                    fill="#FF0081" />
+                                                <path d="M47.3125 27.1875H35.125V28.8125H47.3125V27.1875Z"
+                                                    fill="#FF0081" />
+                                                <path d="M31.875 39.375H19.6875V41H31.875V39.375Z" fill="#FF0081" />
+                                                <path
+                                                    d="M45.0432 34.3315L43.8943 35.4805L46.1636 37.7497L43.8943 40.019L45.0432 41.168L48.4614 37.7497L45.0432 34.3315Z"
+                                                    fill="#FF0081" />
+                                                <path
+                                                    d="M38.5432 35.4805L37.3943 34.3315L33.9761 37.7497L37.3943 41.168L38.5432 40.019L36.2739 37.7497L38.5432 35.4805Z"
+                                                    fill="#FF0081" />
+                                                <path
+                                                    d="M42.0872 33.3938L38.8398 41.5195L40.3488 42.1226L43.5962 33.9968L42.0872 33.3938Z"
+                                                    fill="#FF0081" />
+                                                <path
+                                                    d="M51.375 43.4375V19.0625H15.625V43.4375H14V46.9335L16.0027 49.9375H50.9973L53 46.9335V43.4375H51.375ZM17.25 20.6875H49.75V43.4375H17.25V20.6875ZM51.375 46.4415L50.1277 48.3125H16.8723L15.625 46.4415V45.0625H51.375V46.4415Z"
+                                                    fill="#FF0081" />
+                                                <path d="M37.5625 45.875H35.9375V47.5H37.5625V45.875Z" fill="#FF0081" />
+                                                <path d="M34.3125 45.875H32.6875V47.5H34.3125V45.875Z" fill="#FF0081" />
+                                                <path d="M31.0625 45.875H29.4375V47.5H31.0625V45.875Z" fill="#FF0081" />
+                                            </svg>
+
+                                        </div>
+
+                                        <div class="lg:ml-5">
+                                            <div class="flex w-full items-center">
+                                                <div class="rounded-full bg-gray lg:mb-0 mb-5 lg:hidden block ">
+                                                    <svg width="68" height="68" viewBox="0 0 68 68" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <circle cx="34" cy="34" r="34" fill="#F4F4F4" />
+                                                        <path d="M27 23.125H19.6875V24.75H27V23.125Z" fill="#FF0081" />
+                                                        <path d="M32.6875 23.125H28.625V24.75H32.6875V23.125Z"
+                                                            fill="#FF0081" />
+                                                        <path d="M27 35.3125H19.6875V36.9375H27V35.3125Z"
+                                                            fill="#FF0081" />
+                                                        <path d="M32.6875 35.3125H28.625V36.9375H32.6875V35.3125Z"
+                                                            fill="#FF0081" />
+                                                        <path d="M24.5625 31.25H19.6875V32.875H24.5625V31.25Z"
+                                                            fill="#FF0081" />
+                                                        <path d="M40 31.25H37.5625V32.875H40V31.25Z" fill="#FF0081" />
+                                                        <path d="M35.9375 31.25H26.1875V32.875H35.9375V31.25Z"
+                                                            fill="#FF0081" />
+                                                        <path d="M33.5 27.1875H30.25V28.8125H33.5V27.1875Z"
+                                                            fill="#FF0081" />
+                                                        <path d="M28.625 27.1875H19.6875V28.8125H28.625V27.1875Z"
+                                                            fill="#FF0081" />
+                                                        <path d="M47.3125 27.1875H35.125V28.8125H47.3125V27.1875Z"
+                                                            fill="#FF0081" />
+                                                        <path d="M31.875 39.375H19.6875V41H31.875V39.375Z"
+                                                            fill="#FF0081" />
+                                                        <path
+                                                            d="M45.0432 34.3315L43.8943 35.4805L46.1636 37.7497L43.8943 40.019L45.0432 41.168L48.4614 37.7497L45.0432 34.3315Z"
+                                                            fill="#FF0081" />
+                                                        <path
+                                                            d="M38.5432 35.4805L37.3943 34.3315L33.9761 37.7497L37.3943 41.168L38.5432 40.019L36.2739 37.7497L38.5432 35.4805Z"
+                                                            fill="#FF0081" />
+                                                        <path
+                                                            d="M42.0872 33.3938L38.8398 41.5195L40.3488 42.1226L43.5962 33.9968L42.0872 33.3938Z"
+                                                            fill="#FF0081" />
+                                                        <path
+                                                            d="M51.375 43.4375V19.0625H15.625V43.4375H14V46.9335L16.0027 49.9375H50.9973L53 46.9335V43.4375H51.375ZM17.25 20.6875H49.75V43.4375H17.25V20.6875ZM51.375 46.4415L50.1277 48.3125H16.8723L15.625 46.4415V45.0625H51.375V46.4415Z"
+                                                            fill="#FF0081" />
+                                                        <path d="M37.5625 45.875H35.9375V47.5H37.5625V45.875Z"
+                                                            fill="#FF0081" />
+                                                        <path d="M34.3125 45.875H32.6875V47.5H34.3125V45.875Z"
+                                                            fill="#FF0081" />
+                                                        <path d="M31.0625 45.875H29.4375V47.5H31.0625V45.875Z"
+                                                            fill="#FF0081" />
+                                                    </svg>
+                                                </div>
+
+
+                                                <h3 class="lg:pb-0 pb-2 card__title lg:ml-0 ml-5">Разработка</h3>
+                                            </div>
+
+                                            <p class="text-left">
+                                                Создаём сайты, порталы и интернет-магазины для любой сферы товаров и
+                                                услуг.
+                                            </p>
+
+                                        </div>
+                                    </div>
+
+
+
+                                    <div
+                                        class="bg-white flex flex-row  items-center p-5 lg:m-2 m-5  mb-2 border border-primary border-opacity-10 rounded-lg lg:text-left text-center">
+
+                                        <div class="rounded-full bg-gray p-4 lg:mb-0 mb-5 lg:block hidden ">
+
+                                            <svg width="39" height="39" viewBox="0 0 39 39" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M38.789 12.8035L35.7572 9.77172C35.6222 9.6366 35.4391 9.56076 35.2482 9.56076C35.0572 9.56076 34.8742 9.6366 34.739 9.77172L33.5536 10.9572C29.1212 7.86684 23.4706 7.2456 18.5489 9.09468L23.2118 4.43172C23.5387 4.59936 23.9023 4.68972 24.2802 4.68972C24.9066 4.68972 25.4956 4.44576 25.9385 4.00272C26.8525 3.08856 26.8525 1.60092 25.9384 0.68676C25.4957 0.24384 24.9068 0 24.2806 0C23.6542 0 23.0653 0.24384 22.6225 0.68688C21.8858 1.42344 21.7438 2.53188 22.1941 3.41316L14.8285 10.7786L13.8217 9.77184C13.5407 9.49056 13.0846 9.49056 12.8036 9.77184L9.77184 12.8036C9.63672 12.9386 9.56088 13.1218 9.56088 13.3127C9.56088 13.5037 9.63672 13.6867 9.77184 13.8218L10.7786 14.8285L3.41328 22.1938C3.0864 22.026 2.7228 21.9358 2.34492 21.9358C1.71864 21.9358 1.1298 22.1796 0.68688 22.6225C0.24384 23.0653 0 23.6542 0 24.2806C0 24.907 0.24384 25.4958 0.68688 25.9385C1.12968 26.3814 1.71852 26.6254 2.34468 26.6254C2.97108 26.6254 3.5598 26.3815 4.00272 25.9385C4.73952 25.2018 4.88148 24.0935 4.43112 23.2121L9.09444 18.5489C7.24548 23.4708 7.86684 29.1214 10.9574 33.5534L9.77172 34.7392C9.49044 35.0203 9.49044 35.4762 9.77172 35.7572L12.8035 38.789C12.944 38.9297 13.1284 39 13.3126 39C13.4968 39 13.6811 38.9297 13.8216 38.789L16.8534 35.7572C17.1347 35.4761 17.1347 35.0202 16.8534 34.7392L13.8216 31.7074C13.5406 31.4261 13.0844 31.4261 12.8035 31.7074L11.9948 32.516C8.66484 27.5575 8.66484 21.0034 11.9947 16.0447L12.8035 16.8534C12.944 16.9939 13.1284 17.0642 13.3126 17.0642C13.4968 17.0642 13.6811 16.9939 13.8216 16.8534L16.8534 13.8217C16.9885 13.6866 17.0644 13.5036 17.0644 13.3126C17.0644 13.1216 16.9885 12.9385 16.8534 12.8035L16.0446 11.9947C21.003 8.66508 27.5569 8.66496 32.516 11.9947L31.7074 12.8034C31.4262 13.0846 31.4262 13.5404 31.7074 13.8215L34.739 16.8533C34.8742 16.9884 35.0572 17.0642 35.2482 17.0642C35.4391 17.0642 35.6222 16.9884 35.7572 16.8533L38.789 13.8215C39.0703 13.5406 39.0703 13.0847 38.789 12.8035ZM13.3128 33.2347L15.3263 35.2482L13.3128 37.2617L11.2992 35.2482L13.3128 33.2347ZM23.6406 1.70496C23.8116 1.53408 24.0388 1.44 24.2806 1.44C24.5222 1.44 24.7494 1.53408 24.9203 1.70496C25.2731 2.05776 25.2731 2.63184 24.9204 2.98464C24.7494 3.15552 24.5221 3.24972 24.2803 3.24972C24.0389 3.24972 23.812 3.15576 23.6411 2.98524L23.6407 2.98476C23.6406 2.98464 23.6404 2.98452 23.6404 2.98452C23.2878 2.6316 23.2879 2.05764 23.6406 1.70496ZM2.98464 24.9203C2.81364 25.0913 2.58648 25.1854 2.34468 25.1854C2.103 25.1854 1.87596 25.0913 1.70496 24.9203C1.53408 24.7494 1.44 24.5222 1.44 24.2806C1.44 24.0388 1.53408 23.8115 1.70496 23.6406C1.87596 23.4697 2.10312 23.3756 2.3448 23.3756C2.58624 23.3756 2.81328 23.4696 2.98416 23.64L2.98452 23.6405C2.98464 23.6406 2.98488 23.6407 2.98488 23.6407C3.33744 23.9936 3.33732 24.5676 2.98464 24.9203ZM13.3128 15.3262L12.3062 14.3197C12.3061 14.3196 12.3061 14.3195 12.3061 14.3195C12.3059 14.3192 12.3058 14.3191 12.3056 14.3191L11.2991 13.3126L13.3126 11.2991L14.3176 12.304C14.3182 12.3047 14.3185 12.3054 14.3191 12.306C14.3197 12.3066 14.3204 12.307 14.321 12.3076L14.413 12.3995C14.4149 12.4014 14.4167 12.4032 14.4186 12.4051L15.3263 13.3128L13.3128 15.3262ZM35.2482 15.3262L33.2348 13.3127L35.2482 11.2992L37.2617 13.3127L35.2482 15.3262Z"
+                                                    fill="#FF0081" />
+                                            </svg>
+
+                                        </div>
+
+                                        <div class="lg:ml-5">
+                                            <div class="flex w-full items-center">
+                                                <div class="rounded-full bg-gray p-4 lg:mb-0 mb-5 lg:hidden block ">
+                                                    <svg width="39" height="39" viewBox="0 0 39 39" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M38.789 12.8035L35.7572 9.77172C35.6222 9.6366 35.4391 9.56076 35.2482 9.56076C35.0572 9.56076 34.8742 9.6366 34.739 9.77172L33.5536 10.9572C29.1212 7.86684 23.4706 7.2456 18.5489 9.09468L23.2118 4.43172C23.5387 4.59936 23.9023 4.68972 24.2802 4.68972C24.9066 4.68972 25.4956 4.44576 25.9385 4.00272C26.8525 3.08856 26.8525 1.60092 25.9384 0.68676C25.4957 0.24384 24.9068 0 24.2806 0C23.6542 0 23.0653 0.24384 22.6225 0.68688C21.8858 1.42344 21.7438 2.53188 22.1941 3.41316L14.8285 10.7786L13.8217 9.77184C13.5407 9.49056 13.0846 9.49056 12.8036 9.77184L9.77184 12.8036C9.63672 12.9386 9.56088 13.1218 9.56088 13.3127C9.56088 13.5037 9.63672 13.6867 9.77184 13.8218L10.7786 14.8285L3.41328 22.1938C3.0864 22.026 2.7228 21.9358 2.34492 21.9358C1.71864 21.9358 1.1298 22.1796 0.68688 22.6225C0.24384 23.0653 0 23.6542 0 24.2806C0 24.907 0.24384 25.4958 0.68688 25.9385C1.12968 26.3814 1.71852 26.6254 2.34468 26.6254C2.97108 26.6254 3.5598 26.3815 4.00272 25.9385C4.73952 25.2018 4.88148 24.0935 4.43112 23.2121L9.09444 18.5489C7.24548 23.4708 7.86684 29.1214 10.9574 33.5534L9.77172 34.7392C9.49044 35.0203 9.49044 35.4762 9.77172 35.7572L12.8035 38.789C12.944 38.9297 13.1284 39 13.3126 39C13.4968 39 13.6811 38.9297 13.8216 38.789L16.8534 35.7572C17.1347 35.4761 17.1347 35.0202 16.8534 34.7392L13.8216 31.7074C13.5406 31.4261 13.0844 31.4261 12.8035 31.7074L11.9948 32.516C8.66484 27.5575 8.66484 21.0034 11.9947 16.0447L12.8035 16.8534C12.944 16.9939 13.1284 17.0642 13.3126 17.0642C13.4968 17.0642 13.6811 16.9939 13.8216 16.8534L16.8534 13.8217C16.9885 13.6866 17.0644 13.5036 17.0644 13.3126C17.0644 13.1216 16.9885 12.9385 16.8534 12.8035L16.0446 11.9947C21.003 8.66508 27.5569 8.66496 32.516 11.9947L31.7074 12.8034C31.4262 13.0846 31.4262 13.5404 31.7074 13.8215L34.739 16.8533C34.8742 16.9884 35.0572 17.0642 35.2482 17.0642C35.4391 17.0642 35.6222 16.9884 35.7572 16.8533L38.789 13.8215C39.0703 13.5406 39.0703 13.0847 38.789 12.8035ZM13.3128 33.2347L15.3263 35.2482L13.3128 37.2617L11.2992 35.2482L13.3128 33.2347ZM23.6406 1.70496C23.8116 1.53408 24.0388 1.44 24.2806 1.44C24.5222 1.44 24.7494 1.53408 24.9203 1.70496C25.2731 2.05776 25.2731 2.63184 24.9204 2.98464C24.7494 3.15552 24.5221 3.24972 24.2803 3.24972C24.0389 3.24972 23.812 3.15576 23.6411 2.98524L23.6407 2.98476C23.6406 2.98464 23.6404 2.98452 23.6404 2.98452C23.2878 2.6316 23.2879 2.05764 23.6406 1.70496ZM2.98464 24.9203C2.81364 25.0913 2.58648 25.1854 2.34468 25.1854C2.103 25.1854 1.87596 25.0913 1.70496 24.9203C1.53408 24.7494 1.44 24.5222 1.44 24.2806C1.44 24.0388 1.53408 23.8115 1.70496 23.6406C1.87596 23.4697 2.10312 23.3756 2.3448 23.3756C2.58624 23.3756 2.81328 23.4696 2.98416 23.64L2.98452 23.6405C2.98464 23.6406 2.98488 23.6407 2.98488 23.6407C3.33744 23.9936 3.33732 24.5676 2.98464 24.9203ZM13.3128 15.3262L12.3062 14.3197C12.3061 14.3196 12.3061 14.3195 12.3061 14.3195C12.3059 14.3192 12.3058 14.3191 12.3056 14.3191L11.2991 13.3126L13.3126 11.2991L14.3176 12.304C14.3182 12.3047 14.3185 12.3054 14.3191 12.306C14.3197 12.3066 14.3204 12.307 14.321 12.3076L14.413 12.3995C14.4149 12.4014 14.4167 12.4032 14.4186 12.4051L15.3263 13.3128L13.3128 15.3262ZM35.2482 15.3262L33.2348 13.3127L35.2482 11.2992L37.2617 13.3127L35.2482 15.3262Z"
+                                                            fill="#FF0081" />
+                                                    </svg>
+
+                                                </div>
+
+
+                                                <h3 class="lg:pb-0 pb-2 card__title lg:ml-0 ml-5">Дизайн</h3>
+                                            </div>
+
+                                            <p class="text-left">
+                                                Каждый сайт мы рисуем "с нуля". Никакой шаблон не отобразит уникальность
+                                                вашего фирменного стиля
+                                            </p>
+
+                                        </div>
+                                    </div>
+
+
+
+
+
+                                </div>
+
+
+
+                            </div>
+
+                            <div class="lg:w-1/2 w-full">
+
+                                <div class="flex flex-col">
+
+                                    <div
+                                        class="bg-white flex flex-row  items-center p-5 lg:m-2 m-5  mb-2 border border-primary border-opacity-10 rounded-lg lg:text-left text-center">
+
+                                        <div class="rounded-full bg-gray p-4 lg:mb-0 mb-5 lg:block hidden ">
+
+                                            <svg width="39" height="39" viewBox="0 0 39 39" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0_315:162)">
+                                                    <path
+                                                        d="M37.2399 10.0632C35.3051 7.03898 32.6281 4.51456 29.4983 2.76276C26.2689 0.95535 22.594 0 18.8711 0C18.5287 0 18.2512 0.277571 18.2512 0.619964V4.59317C14.8711 4.71231 11.6463 5.80454 8.88916 7.77099C8.61037 7.9698 8.54555 8.35699 8.74436 8.6357C8.94317 8.91434 9.33019 8.97939 9.60914 8.78043C12.1549 6.96479 15.1309 5.95201 18.2512 5.83348V12.5554C15.2398 12.7518 12.5412 14.3734 10.9456 16.9773C10.7667 17.2693 10.8583 17.6509 11.1502 17.8297C11.2513 17.8917 11.3631 17.9211 11.4736 17.9211C11.6822 17.9211 11.8858 17.816 12.0027 17.625C13.371 15.392 15.6751 13.9936 18.2512 13.7992V21.791C18.2512 22.0174 18.3746 22.2259 18.5733 22.3346C18.6663 22.3856 18.7688 22.411 18.8712 22.411C18.9874 22.411 19.1034 22.3783 19.2048 22.3136L25.9564 18.0033C26.5883 19.1726 26.9202 20.4813 26.9202 21.8241C26.9202 26.2624 23.3094 29.8731 18.8712 29.8731C18.5565 29.8731 18.2362 29.8543 17.9189 29.8168C15.4444 29.5253 13.2811 28.131 11.9834 25.9913C11.2237 24.7385 10.8221 23.2974 10.8221 21.8242C10.8221 21.085 10.9222 20.3529 11.1195 19.6483C11.2118 19.3186 11.0195 18.9765 10.6897 18.8842C10.3606 18.792 10.018 18.9844 9.92563 19.314C9.69773 20.1274 9.58225 20.972 9.58225 21.8243C9.58225 23.3166 9.93957 24.7806 10.6203 26.0946L4.92113 29.5687C3.5984 27.2001 2.90189 24.5244 2.90189 21.7912C2.90189 17.4274 4.62909 13.3522 7.76516 10.3162C8.01112 10.0781 8.01752 9.68558 7.77941 9.43962C7.54122 9.19366 7.14901 9.18718 6.90282 9.42537C3.5233 12.697 1.66211 17.0885 1.66211 21.7911C1.66211 24.9603 2.53123 28.0582 4.17556 30.7499C5.51177 32.9373 7.35483 34.8323 9.50524 36.2296C11.7042 37.6587 14.2425 38.5755 16.8453 38.8809C17.5201 38.9602 18.2016 39.0002 18.8713 39.0002C28.3604 39.0002 36.0803 31.2803 36.0803 21.7911C36.0803 18.7038 35.26 15.6979 33.7026 13.0581L37.0514 10.9201C37.1901 10.8316 37.2878 10.6916 37.3232 10.5309C37.3585 10.37 37.3285 10.2019 37.2399 10.0632ZM16.3761 37.5651C14.1777 37.2183 12.0474 36.4031 10.1806 35.19C8.35809 34.0054 6.7734 32.436 5.56745 30.6266L11.2625 27.1549C12.6639 29.159 14.7634 30.5119 17.1598 30.9555L16.3761 37.5651ZM34.8403 21.7909C34.8403 30.5964 27.6765 37.7602 18.8711 37.7602C18.4535 37.7602 18.0304 37.7433 17.6077 37.7099L18.3914 31.1004C18.5519 31.1087 18.7121 31.1128 18.8711 31.1128C23.9931 31.1128 28.16 26.9459 28.16 21.824C28.16 20.2439 27.7621 18.7043 27.0044 17.334L31.6391 14.3751L32.6567 13.7254C34.0872 16.1655 34.8403 18.9405 34.8403 21.7909ZM32.5218 12.3406C32.5218 12.3406 32.5217 12.3406 32.5216 12.3406L25.8299 16.6127C25.8296 16.6128 25.8293 16.613 25.829 16.6133L19.4909 20.6597V13.1551V5.20179V1.24907C26.0888 1.4446 32.1284 4.75367 35.8532 10.2138L32.5218 12.3406Z"
+                                                        fill="#FF0081" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_315:162">
+                                                        <rect width="39" height="39" fill="white" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                        </div>
+
+                                        <div class="lg:ml-5">
+                                            <div class="flex w-full items-center">
+                                                <div class="rounded-full p-4 bg-gray lg:mb-0 mb-5 lg:hidden block ">
+                                                    <svg width="39" height="39" viewBox="0 0 39 39" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <g clip-path="url(#clip0_315:162)">
+                                                            <path
+                                                                d="M37.2399 10.0632C35.3051 7.03898 32.6281 4.51456 29.4983 2.76276C26.2689 0.95535 22.594 0 18.8711 0C18.5287 0 18.2512 0.277571 18.2512 0.619964V4.59317C14.8711 4.71231 11.6463 5.80454 8.88916 7.77099C8.61037 7.9698 8.54555 8.35699 8.74436 8.6357C8.94317 8.91434 9.33019 8.97939 9.60914 8.78043C12.1549 6.96479 15.1309 5.95201 18.2512 5.83348V12.5554C15.2398 12.7518 12.5412 14.3734 10.9456 16.9773C10.7667 17.2693 10.8583 17.6509 11.1502 17.8297C11.2513 17.8917 11.3631 17.9211 11.4736 17.9211C11.6822 17.9211 11.8858 17.816 12.0027 17.625C13.371 15.392 15.6751 13.9936 18.2512 13.7992V21.791C18.2512 22.0174 18.3746 22.2259 18.5733 22.3346C18.6663 22.3856 18.7688 22.411 18.8712 22.411C18.9874 22.411 19.1034 22.3783 19.2048 22.3136L25.9564 18.0033C26.5883 19.1726 26.9202 20.4813 26.9202 21.8241C26.9202 26.2624 23.3094 29.8731 18.8712 29.8731C18.5565 29.8731 18.2362 29.8543 17.9189 29.8168C15.4444 29.5253 13.2811 28.131 11.9834 25.9913C11.2237 24.7385 10.8221 23.2974 10.8221 21.8242C10.8221 21.085 10.9222 20.3529 11.1195 19.6483C11.2118 19.3186 11.0195 18.9765 10.6897 18.8842C10.3606 18.792 10.018 18.9844 9.92563 19.314C9.69773 20.1274 9.58225 20.972 9.58225 21.8243C9.58225 23.3166 9.93957 24.7806 10.6203 26.0946L4.92113 29.5687C3.5984 27.2001 2.90189 24.5244 2.90189 21.7912C2.90189 17.4274 4.62909 13.3522 7.76516 10.3162C8.01112 10.0781 8.01752 9.68558 7.77941 9.43962C7.54122 9.19366 7.14901 9.18718 6.90282 9.42537C3.5233 12.697 1.66211 17.0885 1.66211 21.7911C1.66211 24.9603 2.53123 28.0582 4.17556 30.7499C5.51177 32.9373 7.35483 34.8323 9.50524 36.2296C11.7042 37.6587 14.2425 38.5755 16.8453 38.8809C17.5201 38.9602 18.2016 39.0002 18.8713 39.0002C28.3604 39.0002 36.0803 31.2803 36.0803 21.7911C36.0803 18.7038 35.26 15.6979 33.7026 13.0581L37.0514 10.9201C37.1901 10.8316 37.2878 10.6916 37.3232 10.5309C37.3585 10.37 37.3285 10.2019 37.2399 10.0632ZM16.3761 37.5651C14.1777 37.2183 12.0474 36.4031 10.1806 35.19C8.35809 34.0054 6.7734 32.436 5.56745 30.6266L11.2625 27.1549C12.6639 29.159 14.7634 30.5119 17.1598 30.9555L16.3761 37.5651ZM34.8403 21.7909C34.8403 30.5964 27.6765 37.7602 18.8711 37.7602C18.4535 37.7602 18.0304 37.7433 17.6077 37.7099L18.3914 31.1004C18.5519 31.1087 18.7121 31.1128 18.8711 31.1128C23.9931 31.1128 28.16 26.9459 28.16 21.824C28.16 20.2439 27.7621 18.7043 27.0044 17.334L31.6391 14.3751L32.6567 13.7254C34.0872 16.1655 34.8403 18.9405 34.8403 21.7909ZM32.5218 12.3406C32.5218 12.3406 32.5217 12.3406 32.5216 12.3406L25.8299 16.6127C25.8296 16.6128 25.8293 16.613 25.829 16.6133L19.4909 20.6597V13.1551V5.20179V1.24907C26.0888 1.4446 32.1284 4.75367 35.8532 10.2138L32.5218 12.3406Z"
+                                                                fill="#FF0081" />
+                                                        </g>
+                                                        <defs>
+                                                            <clipPath id="clip0_315:162">
+                                                                <rect width="39" height="39" fill="white" />
+                                                            </clipPath>
+                                                        </defs>
+                                                    </svg>
+
+                                                </div>
+
+
+                                                <h3 class="lg:pb-0 pb-2 card__title lg:ml-0 ml-5">Маркетинг</h3>
+                                            </div>
+
+                                            <p class="text-left">
+                                                Продумываем стратегию продвижения бренда. Только индивидуальный подход
+                                                даст результат
+                                            </p>
+
+                                        </div>
+                                    </div>
+
+
+
+                                    <div
+                                        class="bg-white flex flex-row  items-center p-5 lg:m-2 m-5  mb-2 border border-primary border-opacity-10 rounded-lg lg:text-left text-center">
+
+                                        <div class="rounded-full bg-gray p-4 lg:mb-0 mb-5 lg:block hidden ">
+
+                                            <svg width="39" height="39" viewBox="0 0 39 39" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M33.3252 18.2739C33.4014 17.7179 33.4852 17.2456 33.4852 16.6896C33.4852 11.3118 29.1281 6.9624 23.7352 6.9624C20.8787 6.9624 18.266 8.15068 16.4455 10.2073C15.4172 9.65127 14.2289 9.33896 13.0406 9.33896C9.31582 9.33896 6.22324 12.0278 5.66719 15.6688C2.74219 17.0856 0.837891 20.0944 0.837891 23.4155C0.837891 28.161 4.72266 32.0382 9.47578 32.0382H30.9486C34.9096 32.0382 38.0783 28.8771 38.1621 24.9999C38.1621 21.9149 36.1816 19.2261 33.3252 18.2739V18.2739ZM30.9486 30.4538H9.47578C5.59102 30.4538 2.42227 27.2927 2.42227 23.4155C2.42227 20.5667 4.08281 18.0378 6.70312 16.9333C6.93926 16.8571 7.17539 16.6134 7.17539 16.3011C7.41152 13.2161 9.87188 10.9233 12.9568 10.9233C14.1451 10.9233 15.1734 11.2433 16.2855 11.7155C16.6055 11.9517 17.0777 11.8755 17.3139 11.5556C18.8221 9.5751 21.1986 8.39443 23.7352 8.39443C28.2521 8.39443 31.9008 12.0354 31.9008 16.5372C31.9008 17.1694 31.8246 17.8778 31.6646 18.5177C31.4514 19.2185 31.9846 19.4698 32.2207 19.546C34.7572 20.1021 36.5016 22.311 36.5016 24.9237C36.5016 28.0011 34.0412 30.4538 30.9486 30.4538V30.4538Z"
+                                                    fill="#FF0081" />
+                                                <path
+                                                    d="M12.2714 17.6953C13.1474 17.6953 13.8634 18.4037 13.8634 19.2797C13.8634 19.5768 14.0996 19.8129 14.3966 19.8129C14.6937 19.8129 14.9298 19.5768 14.9298 19.2797C14.9298 17.8172 13.7339 16.6289 12.2714 16.6289C10.8013 16.6289 9.61304 17.8172 9.61304 19.2797C9.61304 20.7422 10.8089 21.9305 12.2714 21.9305C13.1474 21.9305 13.8634 22.6389 13.8634 23.5148C13.8634 24.3908 13.1474 25.0992 12.2714 25.0992C11.3955 25.0992 10.6794 24.3908 10.6794 23.5148C10.6794 23.2178 10.4433 22.9816 10.1462 22.9816C9.84917 22.9816 9.61304 23.2178 9.61304 23.5148C9.61304 24.9773 10.8089 26.1656 12.2714 26.1656C13.7416 26.1656 14.9298 24.9773 14.9298 23.5148C14.9298 22.0523 13.7339 20.8717 12.2714 20.8717C11.3955 20.8717 10.6794 20.1633 10.6794 19.2873C10.6794 18.4113 11.3955 17.6953 12.2714 17.6953V17.6953Z"
+                                                    fill="#FF0081" />
+                                                <path
+                                                    d="M21.0235 17.6953C21.3206 17.6953 21.5567 17.4592 21.5567 17.1621C21.5567 16.865 21.3206 16.6289 21.0235 16.6289H16.7122C16.4151 16.6289 16.179 16.865 16.179 17.1621V25.6476C16.179 25.9447 16.4151 26.1808 16.7122 26.1808H21.0235C21.3206 26.1808 21.5567 25.9447 21.5567 25.6476C21.5567 25.3506 21.3206 25.1144 21.0235 25.1144H17.2454V21.9381H21.0235C21.3206 21.9381 21.5567 21.7019 21.5567 21.4049C21.5567 21.1078 21.3206 20.8717 21.0235 20.8717H17.2454V17.6953H21.0235Z"
+                                                    fill="#FF0081" />
+                                                <path
+                                                    d="M25.7994 16.6289C24.8092 16.6289 23.8875 17.1469 23.202 18.0914C22.5621 18.9826 22.2041 20.1557 22.2041 21.4049C22.2041 22.6541 22.5545 23.8271 23.202 24.7183C23.8799 25.6629 24.8016 26.1808 25.7994 26.1808C26.7973 26.1808 27.7113 25.6629 28.3969 24.7183C29.0367 23.8271 29.3947 22.6541 29.3947 21.4049C29.3947 20.1557 29.0443 18.9826 28.3969 18.0914C27.7113 17.1469 26.7896 16.6289 25.7994 16.6289ZM25.7994 25.1068C24.4055 25.1068 23.2781 23.4463 23.2781 21.3973C23.2781 19.3559 24.4131 17.6877 25.7994 17.6877C27.1934 17.6877 28.3207 19.3482 28.3207 21.3973C28.3207 23.4463 27.1934 25.1068 25.7994 25.1068Z"
+                                                    fill="#FF0081" />
+                                            </svg>
+
+                                        </div>
+
+                                        <div class="lg:ml-5">
+                                            <div class="flex w-full items-center">
+                                                <div class="rounded-full bg-gray p-4 lg:mb-0 mb-5 lg:hidden block ">
+                                                    <svg width="39" height="39" viewBox="0 0 39 39" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M33.3252 18.2739C33.4014 17.7179 33.4852 17.2456 33.4852 16.6896C33.4852 11.3118 29.1281 6.9624 23.7352 6.9624C20.8787 6.9624 18.266 8.15068 16.4455 10.2073C15.4172 9.65127 14.2289 9.33896 13.0406 9.33896C9.31582 9.33896 6.22324 12.0278 5.66719 15.6688C2.74219 17.0856 0.837891 20.0944 0.837891 23.4155C0.837891 28.161 4.72266 32.0382 9.47578 32.0382H30.9486C34.9096 32.0382 38.0783 28.8771 38.1621 24.9999C38.1621 21.9149 36.1816 19.2261 33.3252 18.2739V18.2739ZM30.9486 30.4538H9.47578C5.59102 30.4538 2.42227 27.2927 2.42227 23.4155C2.42227 20.5667 4.08281 18.0378 6.70312 16.9333C6.93926 16.8571 7.17539 16.6134 7.17539 16.3011C7.41152 13.2161 9.87188 10.9233 12.9568 10.9233C14.1451 10.9233 15.1734 11.2433 16.2855 11.7155C16.6055 11.9517 17.0777 11.8755 17.3139 11.5556C18.8221 9.5751 21.1986 8.39443 23.7352 8.39443C28.2521 8.39443 31.9008 12.0354 31.9008 16.5372C31.9008 17.1694 31.8246 17.8778 31.6646 18.5177C31.4514 19.2185 31.9846 19.4698 32.2207 19.546C34.7572 20.1021 36.5016 22.311 36.5016 24.9237C36.5016 28.0011 34.0412 30.4538 30.9486 30.4538V30.4538Z"
+                                                            fill="#FF0081" />
+                                                        <path
+                                                            d="M12.2714 17.6953C13.1474 17.6953 13.8634 18.4037 13.8634 19.2797C13.8634 19.5768 14.0996 19.8129 14.3966 19.8129C14.6937 19.8129 14.9298 19.5768 14.9298 19.2797C14.9298 17.8172 13.7339 16.6289 12.2714 16.6289C10.8013 16.6289 9.61304 17.8172 9.61304 19.2797C9.61304 20.7422 10.8089 21.9305 12.2714 21.9305C13.1474 21.9305 13.8634 22.6389 13.8634 23.5148C13.8634 24.3908 13.1474 25.0992 12.2714 25.0992C11.3955 25.0992 10.6794 24.3908 10.6794 23.5148C10.6794 23.2178 10.4433 22.9816 10.1462 22.9816C9.84917 22.9816 9.61304 23.2178 9.61304 23.5148C9.61304 24.9773 10.8089 26.1656 12.2714 26.1656C13.7416 26.1656 14.9298 24.9773 14.9298 23.5148C14.9298 22.0523 13.7339 20.8717 12.2714 20.8717C11.3955 20.8717 10.6794 20.1633 10.6794 19.2873C10.6794 18.4113 11.3955 17.6953 12.2714 17.6953V17.6953Z"
+                                                            fill="#FF0081" />
+                                                        <path
+                                                            d="M21.0235 17.6953C21.3206 17.6953 21.5567 17.4592 21.5567 17.1621C21.5567 16.865 21.3206 16.6289 21.0235 16.6289H16.7122C16.4151 16.6289 16.179 16.865 16.179 17.1621V25.6476C16.179 25.9447 16.4151 26.1808 16.7122 26.1808H21.0235C21.3206 26.1808 21.5567 25.9447 21.5567 25.6476C21.5567 25.3506 21.3206 25.1144 21.0235 25.1144H17.2454V21.9381H21.0235C21.3206 21.9381 21.5567 21.7019 21.5567 21.4049C21.5567 21.1078 21.3206 20.8717 21.0235 20.8717H17.2454V17.6953H21.0235Z"
+                                                            fill="#FF0081" />
+                                                        <path
+                                                            d="M25.7994 16.6289C24.8092 16.6289 23.8875 17.1469 23.202 18.0914C22.5621 18.9826 22.2041 20.1557 22.2041 21.4049C22.2041 22.6541 22.5545 23.8271 23.202 24.7183C23.8799 25.6629 24.8016 26.1808 25.7994 26.1808C26.7973 26.1808 27.7113 25.6629 28.3969 24.7183C29.0367 23.8271 29.3947 22.6541 29.3947 21.4049C29.3947 20.1557 29.0443 18.9826 28.3969 18.0914C27.7113 17.1469 26.7896 16.6289 25.7994 16.6289ZM25.7994 25.1068C24.4055 25.1068 23.2781 23.4463 23.2781 21.3973C23.2781 19.3559 24.4131 17.6877 25.7994 17.6877C27.1934 17.6877 28.3207 19.3482 28.3207 21.3973C28.3207 23.4463 27.1934 25.1068 25.7994 25.1068Z"
+                                                            fill="#FF0081" />
+                                                    </svg>
+
+                                                </div>
+
+
+                                                <h3 class="lg:pb-0 pb-2 card__title lg:ml-0 ml-5">Продвижение</h3>
+                                            </div>
+
+                                            <p class="text-left">
+                                                Создаём и настраиваем рекламные кампании в Google, Facebook, Instagram
+                                            </p>
+
+                                        </div>
+                                    </div>
+
+
+
+
+
+                                </div>
+
+
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+        </section>
+
+
+
+    </div>
+
+    </section>
+
+
+
+    <section class="relative">
+
+
+
+        <div class="">
+            <div
+                class=" top-14 py-20 z-50 flex flex-col items-center text-center relative bg-offer bg-primary text-white">
+                <div
+                    class="absolute -top-11 w-20 h-20 text-primary p-1 bg-white dark:bg-blueLight rounded-full shadow-xl flex items-center justify-center">
+                    <span class="text-4xl">
+                        <img src="/staticfiles/img/icons/16.svg" alt="">
+                    </span>
+                </div>
+                <div class="mt-5 flex items-center flex-col">
+                    <h1 class="uppercase font-bold">Разработка сайтов по передовым технологиям</h1>
+                    <span class="lg:text-4xl mt-5 text-3x1 home__sub-title">Наши услуги</span>
+                    <div class="w-10 h-1 bg-secondary lg:mt-10 mt-5"></div>
+                </div>
+                <p class="lg:leading-9 px-5 my-10 lg:w-1/2 w-full text-center lg:text-2xl text-lg ">Предлагаем полный
+                    спектр
+                    услуг в
+                    области интернет-маркетинга для малого, среднего и
+                    крупного бизнеса по всей России и стран СНГ
+                </p>
+            </div>
+
+
+            <section class="flex pb-10 w-full justify-center" id='product'>
+
+
+                <div class="">
+
+                    <div class="container mx-auto">
+
+                        <div class="grid grid-cols-1 lg:grid-cols-3  gap-5">
+
+
+                            <div
+                                class="rounded-lg hover:-translate-y-2 transition-all duration-500 group flex w-100 bg-white relative z-50 lg:mx-0 mx-5 ">
+                                <div
+                                    class="rounded-lg overflow-hidden relative flex flex-col justify-center w-full items-center p-5">
+                                    <div
+                                        class="bg-secondary w-[1px] h-[1px] transform absolute left-0 top-0 group-hover:scale-[1200] rounded-full duration-500 transition-all">
+                                    </div>
+                                    <div
+                                        class="rounded-full relative z-50 bg-gray mb-5 p-4 w-20 h-20 flex items-center justify-center">
+                                        <svg class="group-hover:animate-pulse" width="40" height="37"
+                                            viewBox="0 0 40 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M37.1698 0.216053L17.4261 7.48348L2.0095 13.1576C0.39086 13.7536 0.0615323 14.7229 0.0090888 15.2473C-0.0433547 15.7727 0.0886429 16.7873 1.55662 17.6909L11.9849 24.1081V34.2528C11.9849 35.939 12.6284 36.5243 13.1684 36.7181C13.3102 36.7692 13.4742 36.8039 13.6591 36.8039C14.1782 36.8039 14.859 36.5296 15.6506 35.5697L20.6878 29.464L26.1971 32.8537C26.5824 33.0906 27.0077 33.2128 27.4277 33.2128C27.6646 33.2128 27.9002 33.1732 28.1241 33.095C28.7455 32.8764 29.2397 32.3679 29.4779 31.7008L33.9903 19.0659L39.7946 2.81467C40.2666 1.49381 39.8191 0.783598 39.5102 0.477826C39.2008 0.172053 38.4884 -0.269272 37.1698 0.216053ZM1.51128 15.3976C1.53395 15.1727 1.8135 14.8385 2.53127 14.5745L17.9483 8.90034L36.9827 1.8938L12.6666 22.7548L2.34816 16.4055C1.6975 16.0047 1.48951 15.622 1.51128 15.3976ZM14.4871 34.6097C14.0804 35.1017 13.7924 35.2581 13.6835 35.287C13.6182 35.195 13.4951 34.8914 13.4951 34.2532V25.0378L16.4946 26.8836C16.495 26.884 16.4955 26.884 16.4959 26.884L19.3905 28.6658L14.4871 34.6097ZM28.0561 31.1928C27.9704 31.4324 27.817 31.6026 27.6237 31.6702C27.4291 31.7373 27.2051 31.7004 26.9882 31.5684L17.2879 25.5992C17.2875 25.5983 17.2866 25.5983 17.2861 25.5974L14.0164 23.5859L38.1755 2.85867L32.5681 18.5588L28.0561 31.1928Z"
+                                                fill="#FF0081" />
+                                        </svg>
+
+                                    </div>
+                                    <div class="div">
+                                        <h1
+                                            class="text-sm text-opacity-95 text-black card__title font-bold text-[24px] group-hover:text-white transition-all relative mb-5">
+                                            Landing Page
+                                        </h1>
+                                    </div>
+
+                                    <div class="relative z-50">
+                                        <p class="text-center  group-hover:text-white pb-5">
+                                            Простой сайт с кратким рассказом о конкретном продукте или услуге компании.
+
+                                        </p>
+                                    </div>
+
+
+                                    <div
+                                        class="flex mt-5 relative z-50 bg-white p-5 rounded-lg w-full items-center justify-between">
+                                        <span
+                                            class="font-bold text-[24px] text-opacity-95 group-hover:text-secondary text-black">15
+                                            000 ₽</span>
+
+                                        <div class="">
+                                            <a href="/form" class="border group-hover:bg-secondary group-hover:border-none group-hover:text-white duration-500 transition-all
+                                         border-primary
+                                         border-opacity-20
+                                         focus:outline-none
+                                         py-3 px-5 rounded-lg
+                                         uppercase
+                                         text-sm
+                                         tracking-wide
+                                         font-bold
+                                         hover:bg-secondaryLight transition-all
+                                         hover:text-white
+                                         hover:border-none
+                                         cursor-pointer
+                                         transition flex
+                                         items-center ">
+                                                Заказать
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div
+                                class="rounded-lg hover:-translate-y-2 transition-all duration-500 group flex w-100 bg-white relative z-50 lg:mx-0 mx-5 ">
+                                <div
+                                    class="rounded-lg overflow-hidden relative flex flex-col justify-center w-full items-center p-5">
+                                    <div
+                                        class="bg-secondary w-[1px] h-[1px] transform absolute left-0 top-0 group-hover:scale-[1200] rounded-full duration-500 transition-all">
+                                    </div>
+                                    <div
+                                        class="rounded-full relative z-50 bg-gray mb-5 p-4 w-20 h-20 flex items-center justify-center">
+
+                                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M32.4001 40.0001C33.6667 40.0001 34.6667 39.0001 34.6667 37.7334V24.9334C34.6667 23.6667 33.6667 22.6667 32.4001 22.6667H24.9334C23.6667 22.6667 22.6667 23.6667 22.6667 24.9334V37.7334C22.6667 39.0001 23.6667 40.0001 24.9334 40.0001H32.4001ZM24.9334 24.0001H32.4001C32.9334 24.0001 33.3334 24.4001 33.3334 24.9334V36.0001H24.0001V24.9334C24.0001 24.4001 24.4001 24.0001 24.9334 24.0001ZM24.0001 37.7334V37.3334H33.3334V37.7334C33.3334 38.2667 32.9334 38.6667 32.4001 38.6667H24.9334C24.4001 38.6667 24.0001 38.2667 24.0001 37.7334Z"
+                                                fill="#FF0081" />
+                                            <path
+                                                d="M37.3333 10C33.7333 3.8 27.1333 0 20 0C12.8667 0 6.26667 3.8 2.66667 10C0.933333 13 0 16.4667 0 20C0 23.5333 0.933333 27 2.66667 30C6.2 36.2 12.8667 40 20 40C20.0667 40 20.2 40 20.2667 39.9333C20.2667 39.9333 20.2667 39.9333 20.3333 39.8667C20.3333 39.8667 20.4 39.8667 20.4 39.8L20.4667 39.7333L20.5333 39.6667C20.5333 39.6 20.6 39.6 20.6 39.5333C20.6 39.5333 20.6 39.5333 20.6 39.4667C20.6 39.4 20.6 39.3333 20.6 39.2667V29.6667V20.6667H29.6H39.3333C39.7333 20.6667 40 20.4 40 20C40 16.4667 39.0667 13 37.3333 10ZM19.2667 37.8667C19.1333 37.8 19.0667 37.6667 18.9333 37.6C18.6667 37.4 18.4667 37.1333 18.2 36.9333C18.0667 36.8 17.9333 36.6667 17.8 36.5333C17.6 36.3333 17.4 36.1333 17.2 35.8667C17.0667 35.7333 16.9333 35.6 16.8 35.4C16.6 35.2 16.4 34.9333 16.2667 34.7333C16.1333 34.6 16 34.4 15.8667 34.2667C15.6667 34.0667 15.5333 33.8 15.3333 33.6C15.2 33.4667 15.1333 33.2667 15 33.1333C14.8667 32.8667 14.6667 32.6667 14.5333 32.4C14.4667 32.2667 14.3333 32.0667 14.2667 31.9333C14.1333 31.6667 13.9333 31.4 13.8 31.0667C13.7333 30.9333 13.6667 30.8 13.6 30.6667C13.5333 30.5333 13.4667 30.4 13.4 30.3333H19.3333L19.2667 37.8667C19.3333 37.9333 19.2667 37.9333 19.2667 37.8667ZM3.66667 29C2.26667 26.4667 1.46667 23.6 1.33333 20.6667H9.66667C9.73333 23.5333 10.3333 26.3333 11.3333 29H3.66667ZM3.66667 11H11.3333C10.2667 13.6667 9.73333 16.4667 9.66667 19.3333H1.33333C1.46667 16.4 2.26667 13.5333 3.66667 11ZM20.7333 2.13333C20.8667 2.2 20.9333 2.33333 21.0667 2.4C21.3333 2.6 21.5333 2.86667 21.8 3.06667C21.9333 3.2 22.0667 3.33333 22.2 3.46667C22.4 3.66667 22.6 3.86667 22.8 4.13333C22.9333 4.26667 23.0667 4.4 23.2 4.6C23.4 4.8 23.6 5.06667 23.7333 5.26667C23.8667 5.4 24 5.6 24.1333 5.73333C24.3333 5.93333 24.4667 6.2 24.6667 6.4C24.8 6.53333 24.8667 6.73333 25 6.86667C25.1333 7.13333 25.3333 7.33333 25.4667 7.6C25.5333 7.73333 25.6667 7.93333 25.7333 8.06667C25.8667 8.33333 26.0667 8.6 26.2 8.93333C26.2667 9.06667 26.3333 9.2 26.4 9.33333C26.4667 9.46667 26.5333 9.6 26.6 9.66667H20.6667L20.7333 2.13333C20.6667 2.06667 20.7333 2.06667 20.7333 2.13333ZM11 19.3333C11.0667 16.4667 11.6667 13.6667 12.8 11H19.3333V19.3333H11ZM19.3333 29H12.8C11.6667 26.3333 11.0667 23.5333 11 20.6667H19.3333V29ZM20.6667 11H27.2C28.3333 13.6667 28.9333 16.4667 29 19.3333H20.6667V11ZM28.6667 11H36.3333C37.7333 13.5333 38.5333 16.4 38.6667 19.3333H30.3333C30.2667 16.4667 29.6667 13.6667 28.6667 11ZM35.5333 9.66667H28.0667C27.9333 9.33333 27.8 9 27.6 8.73333C27.5333 8.6 27.4667 8.46667 27.4 8.33333C27.2667 8.06667 27.0667 7.73333 26.9333 7.46667C26.8667 7.33333 26.7333 7.13333 26.6667 7C26.4667 6.73333 26.3333 6.46667 26.1333 6.2C26 6.06667 25.9333 5.86667 25.8 5.73333C25.6 5.46667 25.4 5.2 25.2 4.93333C25.0667 4.8 25 4.66667 24.8667 4.53333C24.6 4.2 24.3333 3.86667 24.0667 3.53333C24 3.46667 24 3.4 23.9333 3.33333C23.6 2.93333 23.2667 2.6 22.9333 2.26667C22.8 2.2 22.6667 2.06667 22.6 2C22.4 1.8 22.2 1.66667 22 1.46667C27.4667 2.06667 32.4667 5.06667 35.5333 9.66667ZM19.3333 2.06667V9.66667H13.4C14.8667 6.73333 16.8667 4.13333 19.3333 2.06667ZM18 1.46667C15.4 3.73333 13.3333 6.53333 11.9333 9.66667H4.46667C7.53333 5.06667 12.5333 2.06667 18 1.46667ZM4.46667 30.3333H11.9333C12.0667 30.6667 12.2 31 12.4 31.2667C12.4667 31.4 12.5333 31.5333 12.6 31.6667C12.7333 31.9333 12.9333 32.2667 13.0667 32.5333C13.1333 32.6667 13.2667 32.8667 13.3333 33C13.5333 33.2667 13.6667 33.5333 13.8667 33.8C14 33.9333 14.0667 34.1333 14.2 34.2667C14.4 34.5333 14.6 34.8 14.8 35.0667C14.9333 35.2 15 35.3333 15.1333 35.4667C15.4 35.8 15.6667 36.1333 15.9333 36.4C16 36.4667 16 36.5333 16.0667 36.6C16.4 36.9333 16.7333 37.3333 17.0667 37.6667C17.2 37.8 17.2667 37.8667 17.4 38C17.6 38.2 17.8 38.3333 18 38.5333C12.5333 37.9333 7.53333 34.9333 4.46667 30.3333Z"
+                                                fill="#FF0081" />
+                                            <path
+                                                d="M27.9999 26.0001H29.3333C29.7333 26.0001 29.9999 25.7334 29.9999 25.3334C29.9999 24.9334 29.7333 24.6667 29.3333 24.6667H27.9999C27.5999 24.6667 27.3333 24.9334 27.3333 25.3334C27.3333 25.7334 27.5999 26.0001 27.9999 26.0001Z"
+                                                fill="#FF0081" />
+                                        </svg>
+
+
+                                    </div>
+                                    <div class="div">
+                                        <h1
+                                            class="text-sm text-opacity-95 text-black card__title font-bold text-[24px] group-hover:text-white transition-all relative mb-5">
+                                            Сайт-визитка
+                                        </h1>
+                                    </div>
+
+                                    <div class="relative z-50">
+                                        <p class="text-center  group-hover:text-white pb-5">
+                                            Информационный мини-сайт для знакомства с компанией
+
+                                        </p>
+                                    </div>
+
+
+                                    <div
+                                        class="flex mt-5 relative z-50 bg-white p-5 rounded-lg w-full items-center justify-between">
+                                        <span
+                                            class="font-bold text-[24px] text-opacity-95 group-hover:text-secondary text-black">25
+                                            000 ₽</span>
+
+                                        <div class="">
+                                            <a href="/form" class="border group-hover:bg-secondary group-hover:border-none group-hover:text-white duration-500 transition-all
+                                         border-primary
+                                         border-opacity-20
+                                         focus:outline-none
+                                         py-3 px-5 rounded-lg
+                                         uppercase
+                                         text-sm
+                                         tracking-wide
+                                         font-bold
+                                         hover:bg-secondaryLight transition-all
+                                         hover:text-white
+                                         hover:border-none
+                                         cursor-pointer
+                                         transition flex
+                                         items-center ">
+                                                Заказать
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div
+                                class="rounded-lg hover:-translate-y-2 transition-all duration-500 group flex w-100 bg-white relative z-50 lg:mx-0 mx-5 ">
+                                <div
+                                    class="rounded-lg overflow-hidden relative flex flex-col justify-center w-full items-center p-5">
+                                    <div
+                                        class="bg-secondary w-[1px] h-[1px] transform absolute left-0 top-0 group-hover:scale-[1200] rounded-full duration-500 transition-all">
+                                    </div>
+                                    <div
+                                        class="rounded-full relative z-50 bg-gray mb-5 p-4 w-20 h-20 flex items-center justify-center">
+
+
+                                        <svg width="40" height="35" viewBox="0 0 40 35" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M37.3158 6.28871H26.5558V3.35C26.5558 1.50258 25.0603 0 23.2223 0H16.7777C14.94 0 13.4445 1.50258 13.4445 3.35V6.28871H2.68419C1.21323 6.28871 0 7.53419 0 9.00516V17.6629C0 17.9484 0.18 18.2023 0.448387 18.2958L1.69355 18.73L1.66677 32.1219C1.66677 33.62 2.87097 34.8384 4.35097 34.8384H35.649C37.129 34.8384 38.3332 33.6197 38.3332 32.1219V18.7242L39.5532 18.2955C39.8206 18.2016 40 17.9477 40 17.6632V9.00516C40 7.53419 38.7868 6.28871 37.3158 6.28871ZM14.7777 3.35C14.7777 2.24161 15.6748 1.34 16.7777 1.34H23.2223C24.3252 1.34 25.2223 2.24161 25.2223 3.35V6.28871H14.7777V3.35ZM37 32.1223C37 32.8813 36.3939 33.4987 35.649 33.4987H4.35097C3.60613 33.4987 3 32.8813 3 32.1235L3.02581 19.1952L16.5352 23.9065V25.6406C16.5352 26.0106 16.8335 26.3106 17.2019 26.3106H22.9458C23.3139 26.3106 23.6126 26.0106 23.6126 25.6406V23.899L37 19.1929V32.1223ZM17.8684 24.9703V21.3042H22.2787V24.9703H17.8684ZM38.6668 17.1874L23.6123 22.4794V20.6342C23.6123 20.2642 23.3139 19.9642 22.9455 19.9642H17.2019C16.8339 19.9642 16.5352 20.2642 16.5352 20.6342V22.4877L1.33323 17.1865V9.00516C1.33323 8.26355 1.94032 7.62871 2.68419 7.62871H37.3158C38.06 7.62871 38.6668 8.26258 38.6668 9.00516V17.1874Z"
+                                                fill="#FF0081" />
+                                        </svg>
+
+
+
+                                    </div>
+                                    <div class="div">
+                                        <h1
+                                            class="text-sm text-opacity-95 text-black card__title font-bold text-[24px] group-hover:text-white transition-all relative mb-5">
+                                            Корпоративный сайт
+                                        </h1>
+                                    </div>
+
+                                    <div class="relative z-50">
+                                        <p class="text-center  group-hover:text-white pb-5">
+                                            Позволяет подробно рассказать о всех особенностях компании и ее достоинствах
+
+                                        </p>
+                                    </div>
+
+
+                                    <div
+                                        class="flex mt-5 relative z-50 bg-white p-5 rounded-lg w-full items-center justify-between">
+                                        <span
+                                            class="font-bold text-[24px] text-opacity-95 group-hover:text-secondary text-black">30
+                                            000 ₽</span>
+
+                                        <div class="">
+                                            <a href="/form" class="border group-hover:bg-secondary group-hover:border-none group-hover:text-white duration-500 transition-all
+                                         border-primary
+                                         border-opacity-20
+                                         focus:outline-none
+                                         py-3 px-5 rounded-lg
+                                         uppercase
+                                         text-sm
+                                         tracking-wide
+                                         font-bold
+                                         hover:bg-secondaryLight transition-all
+                                         hover:text-white
+                                         hover:border-none
+                                         cursor-pointer
+                                         transition flex
+                                         items-center ">
+                                                Заказать
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <div
+                                class="rounded-lg hover:-translate-y-2 transition-all duration-500 group flex w-100 bg-white relative z-50 lg:mx-0 mx-5 ">
+                                <div
+                                    class="rounded-lg overflow-hidden relative flex flex-col justify-center w-full items-center p-5">
+                                    <div
+                                        class="bg-secondary w-[1px] h-[1px] transform absolute left-0 top-0 group-hover:scale-[1200] rounded-full duration-500 transition-all">
+                                    </div>
+                                    <div
+                                        class="rounded-full relative z-50 bg-gray mb-5 p-4 w-20 h-20 flex items-center justify-center">
+
+
+
+                                        <svg width="40" height="34" viewBox="0 0 40 34" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M36.4897 27.5283L39.949 15.6817C40.0054 15.483 40.0151 15.274 39.9774 15.0709C39.9397 14.8678 39.8556 14.6762 39.7317 14.511C39.6078 14.3458 39.4474 14.2114 39.263 14.1183C39.0786 14.0253 38.8752 13.9761 38.6687 13.9745H17.4094L15.6035 7.79429C15.4807 7.37977 15.2276 7.01587 14.8816 6.75656C14.5357 6.49725 14.1154 6.35635 13.6831 6.35474H11.2963C11.1194 6.35474 10.9498 6.42499 10.8247 6.55006C10.6997 6.67512 10.6294 6.84474 10.6294 7.0216C10.6294 7.19847 10.6997 7.36809 10.8247 7.49315C10.9498 7.61821 11.1194 7.68847 11.2963 7.68847H13.683C13.8271 7.689 13.9672 7.73594 14.0825 7.82233C14.1978 7.90872 14.2822 8.02997 14.3232 8.16811C14.3361 8.20552 16.2628 14.8105 16.2737 14.8429L19.9695 27.5281C20.0098 27.6666 20.094 27.7883 20.2095 27.8749C20.3249 27.9615 20.4653 28.0083 20.6096 28.0083H35.8495C35.9938 28.0083 36.1342 27.9616 36.2496 27.875C36.365 27.7885 36.4493 27.6668 36.4897 27.5283V27.5283ZM21.1098 26.6746L17.7985 15.3082H38.6687L35.3497 26.6746H21.1098Z"
+                                                fill="#FF0081" />
+                                            <path
+                                                d="M31.9692 30.6757C31.9757 31.3789 32.2596 32.0511 32.7592 32.5461C33.2587 33.041 33.9335 33.3187 34.6367 33.3187C35.34 33.3187 36.0147 33.041 36.5143 32.546C37.0138 32.0511 37.2977 31.3789 37.3042 30.6757C37.2977 29.9725 37.0138 29.3003 36.5142 28.8053C36.0147 28.3104 35.3399 28.0327 34.6367 28.0327C33.9334 28.0327 33.2587 28.3104 32.7591 28.8054C32.2596 29.3003 31.9757 29.9725 31.9692 30.6757V30.6757ZM34.6367 29.342C34.9871 29.3471 35.3214 29.4898 35.5674 29.7394C35.8133 29.989 35.9512 30.3253 35.9512 30.6758C35.9512 31.0262 35.8133 31.3625 35.5673 31.6121C35.3213 31.8616 34.987 32.0044 34.6366 32.0095C34.2863 32.0044 33.952 31.8616 33.706 31.612C33.46 31.3625 33.3221 31.0261 33.3221 30.6757C33.3221 30.3253 33.46 29.9889 33.706 29.7394C33.952 29.4898 34.2863 29.3471 34.6367 29.342V29.342Z"
+                                                fill="#FF0081" />
+                                            <path
+                                                d="M18.6318 30.6757C18.6383 31.3789 18.9222 32.0511 19.4218 32.5461C19.9213 33.041 20.5961 33.3187 21.2993 33.3187C22.0026 33.3187 22.6773 33.041 23.1769 32.546C23.6764 32.0511 23.9603 31.3789 23.9668 30.6757C23.9603 29.9725 23.6764 29.3003 23.1768 28.8053C22.6773 28.3104 22.0025 28.0327 21.2993 28.0327C20.596 28.0327 19.9213 28.3104 19.4217 28.8054C18.9222 29.3003 18.6383 29.9725 18.6318 30.6757V30.6757ZM21.2993 29.342C21.6497 29.3471 21.984 29.4898 22.23 29.7394C22.4759 29.989 22.6138 30.3253 22.6138 30.6758C22.6138 31.0262 22.4759 31.3625 22.2299 31.6121C21.9839 31.8616 21.6496 32.0044 21.2992 32.0095C20.9489 32.0044 20.6146 31.8616 20.3686 31.612C20.1226 31.3625 19.9847 31.0261 19.9847 30.6757C19.9847 30.3253 20.1226 29.9889 20.3686 29.7394C20.6146 29.4898 20.9489 29.3471 21.2993 29.342V29.342Z"
+                                                fill="#FF0081" />
+                                            <path
+                                                d="M17.6896 23.7939L1.3302 23.7734L3.88174 19.6859H16.1025C16.2794 19.6859 16.449 19.6156 16.5741 19.4906C16.6991 19.3655 16.7694 19.1959 16.7694 19.019C16.7694 18.8422 16.6991 18.6725 16.5741 18.5475C16.449 18.4224 16.2794 18.3522 16.1025 18.3522H4.17871V1.33373H25.2784V4.3613C25.281 4.53645 25.3524 4.70355 25.4772 4.82649C25.602 4.94944 25.7701 5.01835 25.9453 5.01835C26.1205 5.01835 26.2886 4.94944 26.4134 4.82649C26.5382 4.70355 26.6096 4.53645 26.6122 4.3613V1.33373C26.6118 0.980113 26.4712 0.641078 26.2211 0.391031C25.9711 0.140984 25.6321 0.00035309 25.2784 0H4.17871C3.82509 0.00035309 3.48606 0.140984 3.23601 0.391031C2.98596 0.641078 2.84533 0.980113 2.84498 1.33373V18.8283L0.200954 23.0639C0.0753721 23.2679 0.00616413 23.5015 0.000393038 23.741C-0.00537805 23.9805 0.0524943 24.2173 0.168104 24.4271C0.283714 24.6369 0.452922 24.8123 0.65846 24.9354C0.863998 25.0584 1.09851 25.1248 1.33805 25.1276H17.6896C17.864 25.1239 18.0301 25.0521 18.1522 24.9274C18.2742 24.8027 18.3426 24.6352 18.3426 24.4607C18.3426 24.2863 18.2742 24.1187 18.1521 23.9941C18.0301 23.8694 17.864 23.7976 17.6896 23.7939Z"
+                                                fill="#FF0081" />
+                                            <path
+                                                d="M26.6336 11.4507C26.5126 11.5766 26.4458 11.7449 26.4475 11.9194C26.4493 12.094 26.5194 12.261 26.6429 12.3844C26.7663 12.5079 26.9333 12.578 27.1079 12.5797C27.2824 12.5814 27.4507 12.5146 27.5766 12.3936C27.8308 12.1516 28.1684 12.0166 28.5194 12.0166C28.8704 12.0166 29.208 12.1516 29.4622 12.3936C29.5242 12.4555 29.5977 12.5047 29.6786 12.5382C29.7595 12.5717 29.8462 12.5889 29.9337 12.5889C30.0213 12.5889 30.108 12.5717 30.1889 12.5382C30.2698 12.5047 30.3433 12.4555 30.4052 12.3936C30.4671 12.3317 30.5163 12.2582 30.5498 12.1773C30.5833 12.0964 30.6005 12.0097 30.6005 11.9221C30.6005 11.8346 30.5833 11.7479 30.5498 11.667C30.5163 11.5861 30.4671 11.5126 30.4052 11.4506C29.9033 10.9538 29.2256 10.675 28.5194 10.675C27.8132 10.6751 27.1355 10.9538 26.6336 11.4507V11.4507Z"
+                                                fill="#FF0081" />
+                                            <path
+                                                d="M31.8205 10.7013C31.9515 10.6992 32.0789 10.6588 32.1872 10.5852C32.2955 10.5116 32.3799 10.4079 32.43 10.2869C32.4802 10.1659 32.4938 10.0329 32.4693 9.90424C32.4447 9.7756 32.3831 9.65694 32.292 9.56288C31.2912 8.56292 29.9343 8.00122 28.5195 8.00122C27.1048 8.00122 25.7479 8.56292 24.7471 9.56288C24.6261 9.68876 24.5593 9.85706 24.5611 10.0316C24.5628 10.2062 24.6329 10.3732 24.7564 10.4966C24.8798 10.6201 25.0468 10.6902 25.2214 10.6919C25.396 10.6936 25.5643 10.6268 25.6901 10.5058C26.4433 9.76064 27.4601 9.34267 28.5196 9.34269C29.5791 9.3427 30.5959 9.7607 31.349 10.5059C31.4109 10.5679 31.4844 10.6171 31.5653 10.6506C31.6462 10.6841 31.7329 10.7013 31.8205 10.7013V10.7013Z"
+                                                fill="#FF0081" />
+                                            <path
+                                                d="M22.8597 8.61922C22.9216 8.68116 22.9951 8.7303 23.076 8.76382C23.1569 8.79734 23.2436 8.8146 23.3312 8.8146C23.4187 8.8146 23.5055 8.79734 23.5864 8.76382C23.6673 8.7303 23.7408 8.68116 23.8027 8.61922C25.0583 7.37711 26.7532 6.68043 28.5194 6.68044C30.2856 6.68046 31.9805 7.37717 33.2362 8.6193C33.3613 8.74388 33.5308 8.81372 33.7074 8.81351C33.8839 8.8133 34.0532 8.74306 34.1781 8.61819C34.303 8.49331 34.3732 8.32401 34.3734 8.14743C34.3736 7.97084 34.3037 7.80138 34.1791 7.67623C32.6775 6.17627 30.6419 5.33374 28.5194 5.33374C26.397 5.33374 24.3613 6.17627 22.8597 7.67623C22.7977 7.73814 22.7486 7.81164 22.7151 7.89254C22.6816 7.97344 22.6643 8.06015 22.6643 8.14773C22.6643 8.2353 22.6816 8.32201 22.7151 8.40291C22.7486 8.48381 22.7977 8.55732 22.8597 8.61922V8.61922Z"
+                                                fill="#FF0081" />
+                                        </svg>
+
+
+
+
+                                    </div>
+                                    <div class="div">
+                                        <h1
+                                            class="text-sm text-opacity-95 text-black card__title font-bold text-[24px] group-hover:text-white transition-all relative mb-5">
+                                            Интернет магазин
+                                        </h1>
+                                    </div>
+
+                                    <div class="relative z-50">
+                                        <p class="text-center  group-hover:text-white pb-5">
+                                            Начните продавать товары на нашей мощной и быстрой платфоре в купе СЕО
+
+                                        </p>
+                                    </div>
+
+
+                                    <div
+                                        class="flex mt-5 relative z-50 bg-white p-5 rounded-lg w-full items-center justify-between">
+                                        <span
+                                            class="font-bold text-[24px] text-opacity-95 group-hover:text-secondary text-black">80
+                                            000 ₽</span>
+
+                                        <div class="">
+                                            <a href="/form" class="border group-hover:bg-secondary group-hover:border-none group-hover:text-white duration-500 transition-all
+                                     border-primary
+                                     border-opacity-20
+                                     focus:outline-none
+                                     py-3 px-5 rounded-lg
+                                     uppercase
+                                     text-sm
+                                     tracking-wide
+                                     font-bold
+                                     hover:bg-secondaryLight transition-all
+                                     hover:text-white
+                                     hover:border-none
+                                     cursor-pointer
+                                     transition flex
+                                     items-center ">
+                                                Заказать
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <div
+                                class="rounded-lg hover:-translate-y-2 transition-all duration-500 group flex w-100 bg-white relative z-50 lg:mx-0 mx-5 ">
+                                <div
+                                    class="rounded-lg overflow-hidden relative flex flex-col justify-center w-full items-center p-5">
+                                    <div
+                                        class="bg-secondary w-[1px] h-[1px] transform absolute left-0 top-0 group-hover:scale-[1200] rounded-full duration-500 transition-all">
+                                    </div>
+                                    <div
+                                        class="rounded-full relative z-50 bg-gray mb-5 p-4 w-20 h-20 flex items-center justify-center">
+
+
+
+
+                                        <svg width="39" height="39" viewBox="0 0 39 39" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <g clip-path="url(#clip0_318:379)">
+                                                <path
+                                                    d="M38.4284 2.44226H37.2073H20.0733V0.572405C20.0733 0.256285 19.817 0 19.5009 0C19.1848 0 18.9285 0.256285 18.9285 0.572405V2.44226H1.79451H0.573381C0.257261 2.44226 0.000976562 2.69855 0.000976562 3.01467C0.000976562 3.33079 0.257261 3.58707 0.573381 3.58707H1.22211V26.8267C1.22211 27.8157 2.02668 28.6202 3.01564 28.6202H10.7985L9.93975 31.5399C9.93945 31.541 9.93914 31.542 9.93884 31.5431L7.96152 38.2659C7.87238 38.5692 8.04586 38.8874 8.34916 38.9766C8.40312 38.9924 8.45738 39 8.51096 39C8.75831 39 8.98651 38.8383 9.05985 38.5889L10.9144 32.2836H28.0874L29.9419 38.5889C30.0153 38.8384 30.2435 39 30.4908 39C30.5443 39 30.5988 38.9924 30.6526 38.9766C30.9559 38.8874 31.1295 38.5692 31.0403 38.2659L29.063 31.5431C29.0627 31.542 29.0623 31.541 29.062 31.5399L28.2033 28.6202H35.9862C36.9751 28.6202 37.7797 27.8157 37.7797 26.8267V3.58707H38.4284C38.7445 3.58707 39.0008 3.33079 39.0008 3.01467C39.0008 2.69855 38.7445 2.44226 38.4284 2.44226V2.44226ZM27.7507 31.1388H11.2511L11.9919 28.6202H27.0099L27.7507 31.1388V31.1388ZM36.6349 26.8267C36.6349 27.1844 36.3439 27.4754 35.9862 27.4754H27.4479C27.4472 27.4754 27.4466 27.4754 27.4459 27.4754H11.5568C11.5556 27.4754 11.5544 27.4754 11.5532 27.4754H3.01564C2.65793 27.4754 2.36692 27.1844 2.36692 26.8267V3.58707H36.6349V26.8267V26.8267Z"
+                                                    fill="#FF0081" />
+                                                <path
+                                                    d="M13.3472 15.6848L6.27337 22.7588C6.04983 22.9823 6.04983 23.3447 6.27337 23.5682C6.3851 23.6799 6.53164 23.7359 6.6781 23.7359C6.82456 23.7359 6.97109 23.68 7.08283 23.5682L14.1567 16.4943C14.4096 16.2414 14.8212 16.2413 15.0741 16.4943L18.8423 20.2625C19.181 20.6013 19.6315 20.7878 20.1105 20.7878C20.5896 20.7878 21.04 20.6012 21.3788 20.2625L31.7494 9.89184V14.005C31.7494 14.3211 32.0057 14.5774 32.3218 14.5774C32.638 14.5774 32.8942 14.3211 32.8942 14.005V8.51013C32.8942 8.49121 32.8932 8.47228 32.8914 8.45335C32.8906 8.44526 32.889 8.43732 32.888 8.42931C32.8865 8.41885 32.8852 8.40832 32.8832 8.39794C32.8813 8.38863 32.8787 8.37963 32.8765 8.37047C32.8742 8.36154 32.8723 8.35253 32.8696 8.34368C32.8668 8.33467 32.8635 8.32605 32.8604 8.3172C32.8572 8.30834 32.8542 8.29949 32.8507 8.29079C32.8472 8.28255 32.8432 8.27461 32.8394 8.26659C32.8352 8.25774 32.8313 8.24881 32.8267 8.24011C32.8225 8.23225 32.8177 8.22485 32.8132 8.21722C32.8081 8.20882 32.8034 8.20027 32.7979 8.19211C32.7922 8.18356 32.7859 8.17554 32.7797 8.16738C32.7746 8.16066 32.77 8.15372 32.7646 8.14723C32.7406 8.118 32.7138 8.09121 32.6846 8.06732C32.6782 8.06206 32.6715 8.05755 32.665 8.05267C32.6566 8.04633 32.6483 8.03985 32.6396 8.03405C32.6317 8.02878 32.6235 8.0242 32.6154 8.01932C32.6075 8.01458 32.5997 8.00962 32.5915 8.0052C32.5833 8.00077 32.5748 7.99703 32.5664 7.99306C32.5579 7.98902 32.5496 7.98482 32.5408 7.98116C32.5326 7.9778 32.5243 7.97505 32.5161 7.97207C32.5068 7.96872 32.4975 7.96513 32.4879 7.96223C32.4797 7.95979 32.4714 7.95795 32.4631 7.95589C32.4533 7.95337 32.4436 7.95063 32.4336 7.94864C32.4243 7.94681 32.4149 7.94574 32.4056 7.94437C32.3964 7.94299 32.3875 7.94132 32.3782 7.9404C32.3617 7.9388 32.3452 7.93811 32.3287 7.93788C32.3264 7.93788 32.3242 7.9375 32.3219 7.9375H26.8268C26.5107 7.9375 26.2544 8.19378 26.2544 8.50991C26.2544 8.82603 26.5107 9.08231 26.8268 9.08231H30.94L20.5692 19.453C20.4467 19.5755 20.2839 19.643 20.1105 19.643C19.9372 19.643 19.7743 19.5756 19.6518 19.453L15.8836 15.6848C15.1843 14.9856 14.0465 14.9856 13.3472 15.6848V15.6848Z"
+                                                    fill="#FF0081" />
+                                            </g>
+                                            <defs>
+                                                <clipPath id="clip0_318:379">
+                                                    <rect width="39" height="39" fill="white" />
+                                                </clipPath>
+                                            </defs>
+                                        </svg>
+
+
+
+
+
+                                    </div>
+                                    <div class="div">
+                                        <h1
+                                            class="text-sm text-opacity-95 text-black card__title font-bold text-[24px] group-hover:text-white transition-all relative mb-5">
+                                            SEO
+                                        </h1>
+                                    </div>
+
+                                    <div class="relative z-50">
+                                        <p class="text-center  group-hover:text-white pb-5">
+                                            Продвинем ваш брэнд, разработаем стратегию продвижения
+
+                                        </p>
+                                    </div>
+
+
+                                    <div
+                                        class="flex mt-5 relative z-50 bg-white p-5 rounded-lg w-full items-center justify-between">
+                                        <span
+                                            class="font-bold text-[24px] text-opacity-95 group-hover:text-secondary text-black">Договорная</span>
+
+                                        <div class="">
+                                            <a href="/form" class="border group-hover:bg-secondary group-hover:border-none group-hover:text-white duration-500 transition-all
+                                     border-primary
+                                     border-opacity-20
+                                     focus:outline-none
+                                     py-3 px-5 rounded-lg
+                                     uppercase
+                                     text-sm
+                                     tracking-wide
+                                     font-bold
+                                     hover:bg-secondaryLight transition-all
+                                     hover:text-white
+                                     hover:border-none
+                                     cursor-pointer
+                                     transition flex
+                                     items-center ">
+                                                Заказать
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <div
+                                class="rounded-lg hover:-translate-y-2 transition-all duration-500 group flex w-100 bg-white relative z-50 lg:mx-0 mx-5 ">
+                                <div
+                                    class="rounded-lg overflow-hidden relative flex flex-col justify-center w-full items-center p-5">
+                                    <div
+                                        class="bg-secondary w-[1px] h-[1px] transform absolute left-0 top-0 group-hover:scale-[1200] rounded-full duration-500 transition-all">
+                                    </div>
+                                    <div
+                                        class="rounded-full relative z-50 bg-gray mb-5 p-4 w-20 h-20 flex items-center justify-center">
+
+
+
+
+                                        <svg width="39" height="39" viewBox="0 0 39 39" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M38.8933 5.75536L39 4.11999L35.0884 3.87031L34.8356 0L33.1829 0.105618L33.462 4.38097L32.2636 5.56673L32.0782 2.72825L30.4254 2.83387L30.7045 7.1093L29.679 8.12402C26.5274 5.359 22.3841 3.67714 17.8505 3.67714C8.00781 3.67714 0 11.5999 0 21.3384C0 31.0769 8.00781 39 17.8505 39C27.693 39 35.7 31.0769 35.7 21.3384C35.7 16.6739 33.8622 12.4266 30.8664 9.26632L31.9287 8.21507L36.1359 8.48361L36.2426 6.84824L33.4879 6.67242L34.6861 5.48682L38.8933 5.75536ZM34.044 21.3384C34.044 30.1737 26.7793 37.3615 17.8505 37.3615C8.92081 37.3615 1.65607 30.1737 1.65607 21.3384C1.65607 12.5036 8.92081 5.31578 17.8505 5.31578C21.9272 5.31578 25.6566 6.81481 28.5064 9.28431L26.1646 11.6014C23.9185 9.72079 21.0161 8.58485 17.8505 8.58485C10.7427 8.58485 4.96016 14.3062 4.96016 21.3384C4.96016 28.3711 10.7427 34.0924 17.8505 34.0924C24.9575 34.0924 30.74 28.3711 30.74 21.3384C30.74 18.027 29.4575 15.0066 27.3586 12.7371L29.6951 10.4253C32.3914 13.2883 34.044 17.1257 34.044 21.3384ZM17.8366 22.1584L22.8016 17.2458C23.7397 18.355 24.3056 19.7822 24.3056 21.3383C24.3056 24.8603 21.41 27.7257 17.8505 27.7257C14.2908 27.7257 11.3944 24.8603 11.3944 21.3383C11.3944 17.8164 14.2908 14.9513 17.8505 14.9513C19.2412 14.9513 20.5294 15.3901 21.5844 16.1332L16.6658 20.9999L17.8366 22.1584ZM22.7688 14.9613C21.4034 13.9279 19.6983 13.3128 17.8505 13.3128C13.3771 13.3128 9.7383 16.9133 9.7383 21.3384C9.7383 25.764 13.3771 29.3644 17.8505 29.3644C22.3229 29.3644 25.9617 25.764 25.9617 21.3384C25.9617 19.3305 25.2125 17.4926 23.9762 16.0837L26.1868 13.8964C27.9864 15.8681 29.0838 18.4788 29.0838 21.3384C29.0838 27.4674 24.0444 32.4539 17.8504 32.4539C11.6554 32.4539 6.61615 27.4675 6.61615 21.3384C6.61615 15.2095 11.6555 10.2234 17.8504 10.2234C20.5595 10.2234 23.0478 11.1773 24.9901 12.7634L22.7688 14.9613Z"
+                                                fill="#FF0081" />
+                                        </svg>
+
+
+
+
+
+
+                                    </div>
+                                    <div class="div">
+                                        <h1
+                                            class="text-sm text-opacity-95 text-black card__title font-bold text-[24px] group-hover:text-white transition-all relative mb-5">
+                                            Реклама
+                                        </h1>
+                                    </div>
+
+                                    <div class="relative z-50">
+                                        <p class="text-center  group-hover:text-white pb-5">
+                                            Настроим рекламу в поисковике Yandex, настроим таргетинг в социальных сетях
+
+                                        </p>
+                                    </div>
+
+
+                                    <div
+                                        class="flex mt-5 relative z-50 bg-white p-5 rounded-lg w-full items-center justify-between">
+                                        <span
+                                            class="font-bold text-[24px] text-opacity-95 group-hover:text-secondary text-black">Договорная</span>
+
+                                        <div class="">
+                                            <a href="/form" class="border group-hover:bg-secondary group-hover:border-none group-hover:text-white duration-500 transition-all
+                                     border-primary
+                                     border-opacity-20
+                                     focus:outline-none
+                                     py-3 px-5 rounded-lg
+                                     uppercase
+                                     text-sm
+                                     tracking-wide
+                                     font-bold
+                                     hover:bg-secondaryLight transition-all
+                                     hover:text-white
+                                     hover:border-none
+                                     cursor-pointer
+                                     transition flex
+                                     items-center ">
+                                                Заказать
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+
+
+
+
+                        </div>
+
+
+
+                        <div
+                            class="py-0 lg:mx-0 mx-5 lg:mt-10 mt-5 relative hover:-translate-y-2 transition-all duration-500 ">
+                            <div
+                                class="lg:py-5 p-10 bg-opacity-90 bg-help group bg-white text-black w-full rounded-lg flex lg:flex-row flex-col overflow-hidden items-center justify-between relative">
+
+
+
+                                <div class="pt-10 relative z-50 flex flex-col lg:items-start items-center">
+                                    <h1
+                                        class="lg:text-4xl text-4xl lg:pb-2 pb-5 group-hover:text-secondary transition-all lg:text-3x1 font-bold text-lg">
+                                        Помочь с выбором?</h1>
+
+
+                                    <p class="py-5">По нашему опыту, большинство клиентов не знают, какой нужно выбрать
+                                        им
+                                        сайт.<br>
+                                        Наш специалист готов ответить на инетерсующие вас вопросы
+                                    </p>
+
+                                </div>
+
+                                <div class="relative z-50">
+                                    <a href="https://wa.me/+77761604911" class="border group-hover:bg-secondary group-hover:text-white
+                                bg-white
+                                text-center
+                                text-secondary
+                                 border-primary
+                                 border-opacity-20
+                                 mt-5 focus:outline-none
+                                 py-4 px-6 rounded-lg
+                                 uppercase
+                                 text-sm
+                                 tracking-wide
+                                 font-bold
+                                
+                                
+                                 hover:border-none
+                                 cursor-pointer
+                                 transition flex
+                                 items-center ">
+                                        Связаться со специалистом
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+            </section>
+
+
+
+    </section>
+
+
+
+
+    </div>
+    </div>
+    </section>
+
+
+
+
+    <section id="folio" class="bg-off mb-40 mt-20">
+
+        <div class="flex items-center justify-center flex-wrap w-full">
+            <h1
+                class="lg:text-4xl text-4xl uppercase lg:pb-10 pb-5 group-hover:text-secondary transition-all lg:text-3x1 font-bold text-lg">
+                Наши работы</h1>
+        </div>
+
+        <div class="swiper mySwiper group">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide group bg-folio__parent">
+
+                    <div class="bg-folio__child bg-skin flex items-center justify-center lg:h-[500px] h-[400px]">
+                        <div
+                            class="flex w-full absolute top-0 flex-col items-center justify-center text-white relative z-50">
+                            <h1 class="text-[32px] font-bold uppercase">skincareshop</h1>
+                            <p>Интернет каталог</p>
+
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+                </div>
+
+                <div class="swiper-slide group bg-folio__parent">
+
+                    <div class="bg-folio__child bg-stia flex items-center justify-center lg:h-[500px] h-[400px]">
+                        <div
+                            class="flex w-full absolute top-0 flex-col items-center justify-center text-white relative z-50">
+                            <h1 class="text-[32px] font-bold uppercase">STIA</h1>
+                            <p>Охрана и безопасность труда</p>
+
+                        </div>
+                    </div>
+
+
+
+
+
+
+                </div>
+
+
+                <div class="swiper-slide group bg-folio__parent">
+
+                    <div class="bg-folio__child bg-fontanero flex items-center justify-center lg:h-[500px] h-[400px]">
+
+                        <div
+                            class="flex w-full absolute top-0 flex-col items-center justify-center text-white relative z-50">
+                            <h1 class="text-[32px] font-bold uppercase">Fontanero</h1>
+                            <p>Магазин сантехники1</p>
+
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+                </div>
+
+
+
+
+
+
+            </div>
+            <!-- <div class="swiper-pagination"></div> -->
+
+            <div class=" flex w-full items-center justify-center relative">
+                <div
+                    class="bg-white translate-y-16  group-hover:translate-y-0 transition-all duration-700  bg-opacity-30 absolute border border-white border-opacity-30 bottom-0 z-50 w-[150px] h-[55px] flex items-center justify-center">
+                    <a href=""
+                        class="group slider__left-arrow hover:bg-white border-r text-white hover:text-primary border-white border-opacity-30 w-full h-full flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M7 16l-4-4m0 0l4-4m-4 4h18" />
+                        </svg>
+                    </a>
+
+                    <a href=""
+                        class="group slider__right-arrow text-white hover:text-primary hover:bg-white w-full h-full flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6  z-50" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+
+        </div>
+
+
+        <!-- <div class="px-5">
+            <div class="flex flex-col items-center text-center">
+                <h1 class="lg:text-4xl text-3x1 home__sub-title text-black dark:text-white mb-10">Наши работы</h1>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-4  gap-4">
+
+                <div x-data="{ open: false }" @mouseout="open = false" @mouseover="open = true"
+                    class="relative text-white bg-primary rounded-lg">
+                    <span
+                        class="absolute bottom-0 z-50 bg-primary w-full p-5 bg-opacity-30 uppercase text-sm tracking-widest rounded-b-lg">
+                        ordaplast
+                    </span>
+
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg"
+                        class="h-6 w-6 absolute top-5 transition-all z-60 right-5" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+
+                    <a target="blank" rel="nofollow" href="https://ordaplast.kz/">
+                        <img class="filter grayscale blur-md contrast-200 rounded-lg hover:opacity-80 transition-all"
+                            src="/staticfiles/img/pholio/1.jpg"></a>
+                </div>
+
+                <div x-data="{ open: false }" @mouseout="open = false" @mouseover="open = true"
+                    class="relative text-white bg-primary rounded-lg">
+                    <span
+                        class="absolute bottom-0 z-50 bg-primary w-full p-5 bg-opacity-30 uppercase text-sm tracking-widest rounded-b-lg">
+                        Ресторан "Узбекистан"
+                    </span>
+
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg"
+                        class="h-6 w-6 absolute top-5 transition-all z-50 right-5" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+
+                    <a target="blank" rel="nofollow" href="http://uzb.kz/">
+                        <img class="rounded-lg hover:opacity-80 transition-all" src="/staticfiles/img/pholio/2.jpg"></a>
+                </div>
+
+
+
+                <div x-data="{ open: false }" @mouseout="open = false" @mouseover="open = true"
+                    class="relative text-white bg-primary rounded-lg">
+                    <span
+                        class="absolute bottom-0 z-50 bg-primary w-full p-5 bg-opacity-30 uppercase text-sm tracking-widest rounded-b-lg">
+                        stia
+                    </span>
+
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg"
+                        class="h-6 w-6 absolute top-5 transition-all z-50 right-5" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+
+                    <a target="blank" rel="nofollow" href="http://stia.kz/">
+                        <img class="rounded-lg hover:opacity-80 transition-all" src="/staticfiles/img/pholio/3.jpg"></a>
+                </div>
+
+
+                <div x-data="{ open: false }" @mouseout="open = false" @mouseover="open = true"
+                    class="relative text-white bg-primary rounded-lg">
+                    <span
+                        class="absolute bottom-0 z-50 bg-primary w-full p-5 bg-opacity-30 uppercase text-sm tracking-widest rounded-b-lg">
+                        sauna-zhanarys-ast
+                    </span>
+
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg"
+                        class="h-6 w-6 absolute top-5 transition-all z-50 right-5" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+
+                    <a target="blank" rel="nofollow" href="https://sauna-zhanarys-ast.kz/">
+                        <img class="rounded-lg hover:opacity-80 transition-all" src="/staticfiles/img/pholio/4.jpg"></a>
+                </div>
+
+                <div x-data="{ open: false }" @mouseout="open = false" @mouseover="open = true"
+                    class="relative text-white bg-primary rounded-lg">
+                    <span
+                        class="absolute bottom-0 z-50 bg-primary w-full p-5 bg-opacity-30 uppercase text-sm tracking-widest rounded-b-lg">
+                        OrdaTrans
+                    </span>
+
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg"
+                        class="h-6 w-6 absolute top-5 transition-all z-50 right-5" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+
+                    <a target="blank" rel="nofollow" href="http://ordatrans.kz">
+                        <img class="rounded-lg hover:opacity-80 transition-all" src="/staticfiles/img/pholio/5.jpg"></a>
+                </div>
+
+
+
+                <div x-data="{ open: false }" @mouseout="open = false" @mouseover="open = true"
+                    class="relative text-white bg-primary rounded-lg">
+                    <span
+                        class="absolute bottom-0 z-50 bg-primary w-full p-5 bg-opacity-30 uppercase text-sm tracking-widest rounded-b-lg">
+                        Rem-Plast
+                    </span>
+
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg"
+                        class="h-6 w-6 absolute top-5 transition-all z-50 right-5" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+
+                    <a target="blank" rel="nofollow" href="https://rem-plast.kz/">
+                        <img class="rounded-lg hover:opacity-80 transition-all" src="/staticfiles/img/pholio/6.jpg"></a>
+                </div>
+
+
+
+                <div x-data="{ open: false }" @mouseout="open = false" @mouseover="open = true"
+                    class="relative text-white bg-primary rounded-lg">
+                    <span
+                        class="absolute bottom-0 z-50 bg-primary w-full p-5 bg-opacity-30 uppercase text-sm tracking-widest rounded-b-lg">
+                        Fontanero
+                    </span>
+
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg"
+                        class="h-6 w-6 absolute top-5 transition-all z-50 right-5" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+
+                    <a target="blank" rel="nofollow" href="https://fontanero.kz/ru/">
+                        <img class="rounded-lg hover:opacity-80 transition-all" src="/staticfiles/img/pholio/7.jpg"></a>
+                </div>
+
+                <div x-data="{ open: false }" @mouseout="open = false" @mouseover="open = true"
+                    class="relative text-white bg-primary rounded-lg">
+                    <span
+                        class="absolute bottom-0 z-50 bg-primary w-full p-5 bg-opacity-30 uppercase text-sm tracking-widest rounded-b-lg">
+                        skincareshop
+                    </span>
+
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg"
+                        class="h-6 w-6 absolute top-5 transition-all z-50 right-5" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+
+                    <a target="blank" rel="nofollow" href="http://skincareshop.kz/">
+                        <img class="rounded-lg hover:opacity-80 transition-all" src="/staticfiles/img/pholio/8.jpg"></a>
+                </div>
+
+
+
+
+            </div>
+
+
+        </div> -->
+    </section>
+
+
+    <!-- <section>
+        <div class="container mx-auto bg-primary p-10 rounded-lg">
+            <h1 class="text-5x1">This website is built with Dorik, without writing any code</h1>
+        </div>
+    </section> -->
+
+
+    <!-- <section class="my-20 text-black">
+        <div class="container mx-auto">
+            <div class="text-center w-full pb-10">
+                <h1 class="lg:text-4xl home__sub-title">Этап работы</h1>
+            </div>
+        </div>
+    </section> -->
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+    <footer id="contact" class="bg-primary h-full  bg-marketing">
+
+
+
+        <!-- <section id="contact" class="py-20 text-black bg-red  ">
+
+    <div class="overflow-hidden">
+        <div class="background absolute w-full top-0 left-0 z-50">
+            <div class="star1 star"></div>
+            <div class="star2 star"></div>
+            <div class="star3 star"></div>
+            <div class="star4 star"></div>
+        </div>
+        <div class="container mx-auto relative z-50 text-white">
+  
+  
+       
+  
+  
+        </div>
+    </div>
+  </section> -->
+
+        <div class="relative lg:h-full h-screen g:mx-0 mx-5">
+
+            <div class="flex flex-col h-80 w-full">
+
+
+                <div class="flex flex-col items-center w-full pb-10  z-50 absolute -top-20 ">
+
+
+
+
+                    <div class="container relative ">
+                        <div
+                            class="lg:py-5 lg:px-10 p-5 bg-opacity-90 bg-help bg-secondary text-white w-full rounded-lg flex lg:flex-row flex-col items-center justify-between relative">
+
+                            <div class="lg:py-10 py-5  flex flex-col lg:items-start items-center">
+
+                                <div class="flex  lg:flex-row flex-col items-center relative z-50">
+                                    <div class="div">
+                                        <div
+                                            class="w-20 h-20 lg:mb-0 mb-10 p-1 bg-white text-primary rounded-full shadow-xl flex items-center justify-center">
+                                            <span class="text-4xl">
+                                                <img class="w-10 h-10" src="/staticfiles/img/icons/frame/5.svg" alt="">
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="pl-5 w-full flex flex-col justify-center items-start">
+                                        <h1
+                                            class="lg:text-4xl text-4xl lg:pb-2 pb-5  lg:text-3x1 font-bold text-lg text-white">
+                                            Узнать цену за 30 минут</h1>
+
+                                        <div class="flex w-full lg:flex-row flex-col items-start w-full">
+
+                                            <span class="lg:pr-5 py-1  mr-5">
+                                                Ответим через: 5 минут
+                                            </span>
+
+
+
+                                            <span class="lg:px-5 py-1 lg:mr-5">
+                                                Сделаем индивидуальный просчет сайта
+                                            </span>
+
+
+
+
+
+
+
+
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="relative lg:my-0 my-5 z-50">
+                                <a href="https://wa.me/+77761604911" class="border
+              bg-white
+              w-full
+              text-center
+              text-secondary
+               border-primary
+               border-opacity-20
+               focus:outline-none
+               py-4 px-6 rounded-lg
+               uppercase
+               text-sm
+               tracking-wide
+               font-bold
+            
+               hover:border-none
+               cursor-pointer
+               transition flex
+               items-center ">
+                                    Написать в whatsapp
+                                </a>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+
+
+            </div>
+
+
+
+
+
+
+
+        </div>
+
+
+        </div>
+
+
+
+        <div class="border-t px-10 border-white border-opacity-20 absolute w-full bottom-0 p-5 left-0 z-50">
+
+            <div class="flex w-full lg:flex-row flex-col w-full items-end lg:justify-between ">
+                <div class="lg:w-1/3 w-full flex lg:justify-start justify-center lg:order-none order-2">
+                    <div class="flex items-center justify-center lg:flex-row flex-col">
+                        <img class="w-[20px] h-[20px] lg:mr-3 lg:mb-0 mb-5" src="img/logow.svg" alt="">
+
+                        <span class="uppercase text-sm tracking-widest text-white ">WebUnits 2021</span>
+                    </div>
+                </div>
+
+                <div class="lg:w-1/3 w-full flex lg:justify-end justify-center lg:order-0 order-2">
+                    <span class="uppercase text-sm tracking-widest text-white lg:py-0 py-3">Все права
+                        защищены</span>
+                </div>
+            </div>
+
+
+        </div>
+        </div>
+        </div>
+
+
+        <!-- Swiper JS -->
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+        <!-- Initialize Swiper -->
+        <script>
+            var swiper = new Swiper(".mySwiper", {
+
+                slidesPerView: 1.1,
+                centeredSlides: true,
+                spaceBetween: 20,
+                initialSlide: 1,
+                loop: true,
+                mousewheel: false,
+
+                navigation: {
+                    prevEl: '.slider__left-arrow',
+                    nextEl: '.slider__right-arrow'
+                },
+
+                // Responsive breakpoints
+                breakpoints: {
+                    // when window width is >= 320px
+                    320: {
+                        slidesPerView: 1.5,
+                        spaceBetween: 20
+                    },
+                    // when window width is >= 480px
+                    480: {
+                        slidesPerView: 3,
+                        spaceBetween: 30
+                    },
+                    // when window width is >= 640px
+                    640: {
+                        slidesPerView: 1.5,
+                        spaceBetween: 10
+                    }
+                },
+
+
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+            });
+        </script>
+
+
+
+    </footer>
+
+
+
+</body>
+
+</html>
