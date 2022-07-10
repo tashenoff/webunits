@@ -136,6 +136,10 @@ html {
     background-image: url('img/skin.jpg');
 }
 
+.bg-holod {
+    background-image: url('img/holod.png');
+}
+
 .bg-stia {
     background-image: url('img/stia.jpg');
 }
