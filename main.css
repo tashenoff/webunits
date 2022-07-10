@@ -127,7 +127,7 @@ html {
 }
 
 .bg-offer {
-    background-image: url('/staticfiles/img/bg/2.jpg');
+    background-image: url('img/2.jpg');
     position: relative;
 }
 
