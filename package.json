@@ -1,0 +1,14 @@
+{
+  "devDependencies": {
+    "postcss-import": "^14.1.0",
+    "tailwindcss": "^3.1.6"
+  },
+  "scripts": {
+    "start": "postcss ./css/base.css -o ./dist/base.min.css --watch",
+    "prod": "npx tailwindcss -o ./dist/base.css --minify"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.7",
+    "postcss-cli": "^10.0.0"
+  }
+}

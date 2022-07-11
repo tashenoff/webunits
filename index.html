@@ -5,16 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
-
+    <link rel="stylesheet" href="dist/base.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-
-    <link rel="stylesheet" href="starts.css" />
-
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
-    <link href="main.css" rel="stylesheet">
+    
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;900&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/gh/alpine-collective/alpine-magic-helpers@1.2.x/dist/scroll.min.js"
@@ -26,91 +22,39 @@
     <title>😎Webunits.ru - создание сайтов в Москве</title>
 
 
-<!-- Yandex.Metrika counter -->
-<script type="text/javascript" >
-    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-    m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
- 
-    ym(89510551, "init", {
-         clickmap:true,
-         trackLinks:true,
-         accurateTrackBounce:true,
-         webvisor:true
-    });
- </script>
- <noscript><div><img src="https://mc.yandex.ru/watch/89510551" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
- <!-- /Yandex.Metrika counter -->
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+            m[i].l = 1 * new Date(); k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
+            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(89510551, "init", {
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true
+        });
+    </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/89510551" style="position:absolute; left:-9999px;" alt="" /></div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
 
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-
-
-                    scale: {
-                        '175': '1.5',
-                    },
-
-                    display: ['hover', 'focus', 'group-hover'],
-                    textOpacity: ['hover', 'focus', 'group-hover'],
-                    translate: ['group-hover', 'hover'],
-                    scale: ['hover', 'focus', 'group-hover'],
-                    transform: ['hover', 'focus', 'group-hover'],
-                    borderRadius: {
-                        'none': '0',
-                        'sm': '0.125rem',
-                        DEFAULT: '0.25rem',
-                        DEFAULT: '4px',
-                        'md': '0.375rem',
-                        'lg': '0.3rem',
-                        'full': '9999px',
-                        'large': '12px',
-                    },
-
-                    container: {
-                        screens: {
-                            sm: "100%",
-                            md: "100%",
-                            lg: "1140px",
-                            xl: "1140px"
-                        }
-                    },
-
-                    zIndex: {
-                        '40': '40',
-                        '60': '60',
-                    },
-                    colors: {
-                        primary: '#010101',
-                        darkLight: '#0c162d',
-                        primarylight: '#9361e2',
-                        secondary: '#ff0081',
-                        secondaryLight: '#ef238a',
-                        green: '#47E189',
-                        greenDark: '#42cf7e',
-                        black: '#333',
-                        white: '#fff',
-                        red: '#e045e6',
-                        gray: '#F4F4F4',
-                        blueLight: '#c3d9f6'
-                    }
-                }
-            }
-        }
-
         var myNav = document.getElementById("nav");
 
-window.onscroll = function () {
-    "use strict";
-    if (document.body.scrollTop >= 280 || document.documentElement.scrollTop >= 280) {
-        myNav?.classList?.add("scroll");
-    } 
-    myNav?.classList?.remove("scroll");
+        window.onscroll = function () {
+            "use strict";
+            if (document.body.scrollTop >= 280 || document.documentElement.scrollTop >= 280) {
+                myNav?.classList?.add("scroll");
+            }
+            myNav?.classList?.remove("scroll");
 
-};
+        };
 
-        
+
     </script>
 
 </head>
