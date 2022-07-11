@@ -116,13 +116,15 @@
                 x-data="{ atTop: true }" :class="{ 'bg-primary bg-opacity-90 ' : !atTop }"
                 @scroll.window="atTop = (window.pageYOffset > 40) ? false : true">
                 <div class="navbar w-full flex justify-center dark:text-white">
-                    <nav class="flex items-center lg:px-0 px-2 justify-between relative z-40 flex-wrap lg:py-6 py-3 fixed w-full top-0"
+                    <nav class="flex items-center lg:px-0 px-2 justify-between relative z-40 flex-wrap fixed w-full top-0"
                         x-data="{ isOpen: false }" @keydown.escape="isOpen = false"
                         :class="{ 'shadow-lg bg-transparent' : isOpen }">
 
                         <!--Logo etc-->
-                        <div class="pl-5 flex items-center flex-shrink-0 text-white mr-6">
-                            <img class="w-[25px] h-[25px] mr-2" src="img/logow.svg" alt="">
+                        <div class="pl-3 flex items-center flex-shrink-0 text-white mr-6">
+                            <div class="flex items-center justify-center lg:w-[60px] lg:h-[60px] mr-2 lg:mr-0">
+                                <img class="lg:w-[30px] lg:h-[30px] w-[25px] h-[25px]" src="img/logow.svg" alt="">
+                            </div>
                             <a class="font-bold uppercase" href="/">
                                 WebUnits
                             </a>
@@ -154,19 +156,19 @@
                             @click.away="isOpen = false" x-cloak x-show.transition="true">
                             <ul class="pt-6 lg:pt-0 list-reset lg:flex items-center uppercase text-sm font-bold">
                                 <li class="mr-3">
-                                    <a href="/" class="cursor-pointer inline-block py-2 px-2  no-underline">
+                                    <a href="/" class="cursor-pointer inline-block px-2 py-5  no-underline">
                                         Главная</a>
                                     </a>
                                 </li>
                                 <li class="mr-3">
-                                    <a class="cursor-pointer inline-block  no-underline hover:text-gray-200 hover:text-underline py-2 px-2"
+                                    <a class="cursor-pointer inline-block py-5  no-underline hover:text-gray-200 hover:text-underline px-2"
                                         @click="$scroll('#about'), isOpen = false">
                                         О нас
                                     </a>
                                 </li>
 
                                 <li class="mr-3">
-                                    <a class="cursor-pointer inline-block  no-underline hover:text-gray-200 hover:text-underline py-2 px-2"
+                                    <a class="cursor-pointer inline-block py-5  no-underline hover:text-gray-200 hover:text-underline px-2"
                                         @click="$scroll('#folio'), isOpen = false">
                                         Наши работы
                                     </a>
@@ -225,9 +227,8 @@
 
                         </div>
                     </div>
-                    <a href="form"
-                        class="bg-secondary hover:bg-secondaryLight transition-all px-5 uppercase text-xs font-bold tracking-widest py-3 rounded-lg">Заказать
-                        звонок</a>
+                    <a href="tel:89775862120"
+                        class="bg-secondary hover:bg-secondaryLight transition-all px-5 uppercase text-xs font-bold tracking-widest py-3 rounded-lg">Связаться с нами</a>
 
 
                 </div>
@@ -660,13 +661,23 @@
                     class="absolute -top-11 w-20 h-20 text-primary p-1 bg-white dark:bg-blueLight rounded-full shadow-xl flex items-center justify-center">
 
                     <svg width="39" height="39" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M27.3882 26.1405L39 15.1085L31.7571 7.48486L27.3882 26.1405ZM36.3741 15.041L30.6141 20.5124L32.781 11.2596L36.3741 15.041Z" fill="#FF0081"/>
-                        <path d="M30.6043 6.70443L30.5631 6.6944L20.2732 4.28467L20.2354 4.44527L26.5312 24.0973L30.6043 6.70443ZM22.9466 6.81904L28.3715 8.08916L26.2523 17.1376L22.9466 6.81904Z" fill="#FF0081"/>
-                        <path d="M8.67334 7.39597L9.04371 8.55237L25.4082 24.9168L25.4186 24.8854L18.7783 4.1582L8.67334 7.39597ZM11.5457 8.42653L17.5757 6.49513L21.3283 18.2103L11.5457 8.42653Z" fill="#FF0081"/>
-                        <path d="M26.204 27.3949L26.2597 27.3381L26.2307 27.3091L7.50261 8.58105L7.48474 8.59923L0 16.084L18.757 34.841L26.204 27.3949ZM7.50261 11.2083L23.6325 27.3381L18.757 32.2139L2.62684 16.084L7.50261 11.2083Z" fill="#FF0081"/>
-                        <path d="M18.8154 25.8291C19.7132 25.8291 20.441 26.5572 20.441 27.4547C20.441 28.3522 19.7132 29.0803 18.8154 29.0803C17.9175 29.0803 17.1897 28.3522 17.1897 27.4547C17.1897 26.5572 17.9175 25.8291 18.8154 25.8291Z" fill="#FF0081"/>
-                        </svg>
-                        
+                        <path
+                            d="M27.3882 26.1405L39 15.1085L31.7571 7.48486L27.3882 26.1405ZM36.3741 15.041L30.6141 20.5124L32.781 11.2596L36.3741 15.041Z"
+                            fill="#FF0081" />
+                        <path
+                            d="M30.6043 6.70443L30.5631 6.6944L20.2732 4.28467L20.2354 4.44527L26.5312 24.0973L30.6043 6.70443ZM22.9466 6.81904L28.3715 8.08916L26.2523 17.1376L22.9466 6.81904Z"
+                            fill="#FF0081" />
+                        <path
+                            d="M8.67334 7.39597L9.04371 8.55237L25.4082 24.9168L25.4186 24.8854L18.7783 4.1582L8.67334 7.39597ZM11.5457 8.42653L17.5757 6.49513L21.3283 18.2103L11.5457 8.42653Z"
+                            fill="#FF0081" />
+                        <path
+                            d="M26.204 27.3949L26.2597 27.3381L26.2307 27.3091L7.50261 8.58105L7.48474 8.59923L0 16.084L18.757 34.841L26.204 27.3949ZM7.50261 11.2083L23.6325 27.3381L18.757 32.2139L2.62684 16.084L7.50261 11.2083Z"
+                            fill="#FF0081" />
+                        <path
+                            d="M18.8154 25.8291C19.7132 25.8291 20.441 26.5572 20.441 27.4547C20.441 28.3522 19.7132 29.0803 18.8154 29.0803C17.9175 29.0803 17.1897 28.3522 17.1897 27.4547C17.1897 26.5572 17.9175 25.8291 18.8154 25.8291Z"
+                            fill="#FF0081" />
+                    </svg>
+
                 </div>
                 <div class="mt-5 flex items-center flex-col">
                     <h1 class="uppercase font-bold">Разработка сайтов по передовым технологиям</h1>
@@ -1225,6 +1236,7 @@
                             class="flex w-full absolute top-0 flex-col items-center justify-center text-white relative z-50">
                             <h1 class="text-[32px] font-bold uppercase">skincareshop</h1>
                             <p>Интернет каталог</p>
+                            <a target="_blank" class="mt-5" href="http://www.skincareshop.kz">Посмотреть</a>
 
                         </div>
                     </div>
@@ -1244,6 +1256,7 @@
                             class="flex w-full absolute top-0 flex-col items-center justify-center text-white relative z-50">
                             <h1 class="text-[32px] font-bold uppercase">STIA</h1>
                             <p>Охрана и безопасность труда</p>
+                            <a target="_blank" class="mt-5" href="https://stia.kz/">Посмотреть</a>
 
                         </div>
                     </div>
@@ -1263,7 +1276,8 @@
                         <div
                             class="flex w-full absolute top-0 flex-col items-center justify-center text-white relative z-50">
                             <h1 class="text-[32px] font-bold uppercase">Fontanero</h1>
-                            <p>Магазин сантехники1</p>
+                            <p>Магазин сантехники</p>
+                            <a target="_blank" class="mt-5" href="https://fontanero.kz/ru">Посмотреть</a>
 
                         </div>
                     </div>
@@ -1279,14 +1293,17 @@
 
 
 
-                <a target="_blank" href="https://bytovoy-service.kz/" class="swiper-slide group bg-folio__parent">
 
-                    <div class="bg-folio__child bg-holod  flex items-center justify-center lg:h-[500px] h-[400px]">
+                
+                <div class="swiper-slide group bg-folio__parent">
+
+                    <div class="bg-folio__child bg-holod flex items-center justify-center lg:h-[500px] h-[400px]">
 
                         <div
                             class="flex w-full absolute top-0 flex-col items-center justify-center text-white relative z-50">
-                            <h1 class="text-[32px] font-bold uppercase">BS-service</h1>
+                            <h1 class="text-[32px] font-bold uppercase">BS Service</h1>
                             <p>Ремонт холодильников</p>
+                            <a target="_blank" class="mt-5" href="https://bytovoy-service.kz/">Посмотреть</a>
 
                         </div>
                     </div>
@@ -1297,7 +1314,19 @@
 
 
 
-                </a>
+                </div>
+
+
+
+
+           
+
+
+
+
+
+
+                </div>
 
 
 
@@ -1681,7 +1710,7 @@
                     <div class="flex items-center justify-center lg:flex-row flex-col">
                         <img class="w-[20px] h-[20px] lg:mr-3 lg:mb-0 mb-5" src="img/logow.svg" alt="">
 
-                        <span class="uppercase text-sm tracking-widest text-white ">WebUnits 2021</span>
+                        <span class="uppercase text-sm tracking-widest text-white ">WebUnits 2022</span>
                     </div>
                 </div>
 
