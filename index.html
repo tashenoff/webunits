@@ -72,7 +72,7 @@
 
 
 
-            <div class="lg:px-10 py-3 flex w-full items-center text-white fixed z-60 dark:bg-primary text-black shadow-md border-b border-white border-opacity-25"
+            <div class="lg:px-10 py-3 flex w-full items-center text-white fixed z-60 text-black shadow-md border-b border-white border-opacity-25"
                 x-data="{ atTop: true }" :class="{ 'bg-primary bg-opacity-90 ' : !atTop }"
                 @scroll.window="atTop = (window.pageYOffset > 40) ? false : true">
                 <div class="navbar w-full flex justify-center dark:text-white">
@@ -111,7 +111,7 @@
 
 
                         <!--Menu-->
-                        <div class="w-full lg:px-0 px-5 flex-grow lg:flex lg:items-center lg:w-auto lg:relative absolute lg:top-0 top-16 left-0 z-50"
+                        <div class="w-full lg:px-0 px-5 flex-grow lg:flex lg:items-center lg:w-auto lg:relative absolute lg:top-0 top-14 left-0 z-50"
                             :class="{ 'block shadow-3xl': isOpen, 'hidden': !isOpen, 'bg-primary' : isOpen }"
                             @click.away="isOpen = false" x-cloak x-show.transition="true">
                             <ul class="pt-6 lg:pt-0 list-reset lg:flex items-center uppercase text-sm font-bold">
