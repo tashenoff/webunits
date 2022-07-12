@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
-    
+
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;900&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/gh/alpine-collective/alpine-magic-helpers@1.2.x/dist/scroll.min.js"
@@ -59,13 +59,9 @@
 
 </head>
 
-<body class="bg-gray flex flex-col h-full" x-data="{ 'isDialogOpen': false, 'darkMode': false }"
-    @keydown.escape="isDialogOpen = false">
+<body class="bg-gray flex flex-col h-full">
 
     <div style=" flex: 1 0 auto;">
-
-
-
         <div
             class="flex text-black w-full justify-center lg:px-0 z-60  mx-auto delay-100 transition-colors duration-300 ease-in-out ">
 
@@ -75,7 +71,7 @@
             <div class="lg:px-10 py-3 flex w-full items-center text-white fixed z-60 text-black shadow-md border-b border-white border-opacity-25"
                 x-data="{ atTop: true }" :class="{ 'bg-primary bg-opacity-90 ' : !atTop }"
                 @scroll.window="atTop = (window.pageYOffset > 40) ? false : true">
-                <div class="navbar w-full flex justify-center dark:text-white">
+                <div class="navbar w-full flex justify-center">
                     <nav class="flex items-center lg:px-0 px-2 justify-between relative z-40 flex-wrap fixed w-full top-0"
                         x-data="{ isOpen: false }" @keydown.escape="isOpen = false"
                         :class="{ 'shadow-lg bg-transparent' : isOpen }">
@@ -134,33 +130,6 @@
                                     </a>
                                 </li>
 
-                                <!-- <li class="mr-3">
-                            <a class="cursor-pointer animate-pulse inline-block  no-underline hover:text-gray-200 hover:text-underline py-2 px-2"
-                                @click="$scroll('#sale'), isOpen = false">
-                                Акция недели
-                            </a>
-                        </li> -->
-
-                                <!-- <li class="mr-3">
-                            <a class="cursor-pointer inline-block  no-underline hover:text-gray-200 hover:text-underline py-2 px-2"
-                                @click="$scroll('#product'), isOpen = false">Продукты
-                            </a>
-                        </li> -->
-
-                                <!-- <li class="mr-3">
-                            <a href="/articles/"
-                                class="cursor-pointer inline-block  no-underline hover:text-gray-200 hover:text-underline py-2 px-2">Статьи
-                            </a>
-                        </li> -->
-
-
-                                <!-- <li class="mr-3">
-                <a class="inline-block text-white no-underline hover:text-gray-200 hover:text-underline py-2 px-2"
-                    href="#" @click="$scroll('#second'), isOpen = false">отзывы
-                </a>
-            </li> -->
-
-
                                 <li class="mr-3 lg:mb-0 mb-5">
                                     <a class="cursor-pointer inline-block  no-underline hover:text-gray-200 hover:text-underline py-2 px-2"
                                         @click="$scroll('#contact'), isOpen = false">Контакты
@@ -175,20 +144,10 @@
 
 
 
-                <div class="navbar__right justify-end w-full items-center relative z-50 lg:flex hidden ">
-                    <div class="pr-5 font-bold flex">
-                        <div class="flex items-center mr-5">
+                <div class="navbar__right">
 
-                        </div>
-                        <div class="flex items-center dark:text-white">
-
-
-                            <a href="tel:89775862120">8 977 586 21 20</a>
-
-                        </div>
-                    </div>
-                    <a href="tel:89775862120"
-                        class="bg-secondary hover:bg-secondaryLight transition-all px-5 uppercase text-xs font-bold tracking-widest py-3 rounded-lg">Связаться
+                    <a class="pr-5 font-bold" href="tel:89775862120">8 977 586 21 20</a>
+                    <a href="tel:89775862120" class="btn btn-secondary">Связаться
                         с нами</a>
 
 
@@ -202,7 +161,7 @@
 
 
         <section id="home"
-            class="text-white dark:bg-primary dark:text-white home w-full relative overflow-hidden flex flex-col justify-center items-center ">
+            class="text-white home w-full relative overflow-hidden flex flex-col justify-center items-center ">
 
 
 
@@ -253,8 +212,7 @@
                         </ul>
                         </p>
 
-                        <a href="https://wa.me/+79775862120"
-                            class="focus:outline-none lg:w-1/3 w-full py-4 bg-secondary hover:bg-secondaryLight transition-all px-6 text-white  text-black rounded-lg mt-5 uppercase text-sm tracking-wide font-bold cursor-pointer ">
+                        <a href="https://wa.me/+79775862120" class="btn btn-lg btn-secondary">
                             Оставить заявку</a>
 
                     </div>
@@ -619,7 +577,7 @@
             <div
                 class=" top-14 py-20 z-50 flex flex-col items-center text-center relative bg-offer bg-primary text-white">
                 <div
-                    class="absolute -top-11 w-20 h-20 text-primary p-1 bg-white dark:bg-blueLight rounded-full shadow-xl flex items-center justify-center">
+                    class="absolute -top-11 w-20 h-20 text-primary p-1 bg-white rounded-full shadow-xl flex items-center justify-center">
 
                     <svg width="39" height="39" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -1137,24 +1095,7 @@
                                 </div>
 
                                 <div class="relative z-50">
-                                    <a href="https://wa.me/+79775862120" class="border group-hover:bg-secondary group-hover:text-white
-                                bg-white
-                                text-center
-                                text-secondary
-                                 border-primary
-                                 border-opacity-20
-                                 mt-5 focus:outline-none
-                                 py-4 px-6 rounded-lg
-                                 uppercase
-                                 text-sm
-                                 tracking-wide
-                                 font-bold
-                                
-                                
-                                 hover:border-none
-                                 cursor-pointer
-                                 transition flex
-                                 items-center ">
+                                    <a href="https://wa.me/+79775862120" class="btn btn-secondary">
                                         Связаться со специалистом
                                     </a>
                                 </div>
@@ -1297,7 +1238,7 @@
                 <div
                     class="bg-white lg:translate-y-16  lg:group-hover:translate-y-0 transition-all duration-700  bg-opacity-30 absolute border border-white border-opacity-30 bottom-0 z-50 w-[150px] h-[55px] flex items-center justify-center">
                     <a href=""
-                        class="group slider__left-arrow hover:bg-white border-r text-white hover:text-primary border-white border-opacity-30 w-full h-full flex items-center justify-center">
+                        class="slider-arrow slider-arrow__left">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M7 16l-4-4m0 0l4-4m-4 4h18" />
@@ -1305,7 +1246,7 @@
                     </a>
 
                     <a href=""
-                        class="group slider__right-arrow text-white hover:text-primary hover:bg-white w-full h-full flex items-center justify-center">
+                        class="slider-arrow slider-arrow__right">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6  z-50" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -1318,191 +1259,9 @@
         </div>
 
 
-        <!-- <div class="px-5">
-            <div class="flex flex-col items-center text-center">
-                <h1 class="lg:text-4xl text-3x1 home__sub-title text-black dark:text-white mb-10">Наши работы</h1>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-4  gap-4">
-
-                <div x-data="{ open: false }" @mouseout="open = false" @mouseover="open = true"
-                    class="relative text-white bg-primary rounded-lg">
-                    <span
-                        class="absolute bottom-0 z-50 bg-primary w-full p-5 bg-opacity-30 uppercase text-sm tracking-widest rounded-b-lg">
-                        ordaplast
-                    </span>
-
-                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg"
-                        class="h-6 w-6 absolute top-5 transition-all z-60 right-5" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
-
-                    <a target="blank" rel="nofollow" href="https://ordaplast.kz/">
-                        <img class="filter grayscale blur-md contrast-200 rounded-lg hover:opacity-80 transition-all"
-                            src="/staticfiles/img/pholio/1.jpg"></a>
-                </div>
-
-                <div x-data="{ open: false }" @mouseout="open = false" @mouseover="open = true"
-                    class="relative text-white bg-primary rounded-lg">
-                    <span
-                        class="absolute bottom-0 z-50 bg-primary w-full p-5 bg-opacity-30 uppercase text-sm tracking-widest rounded-b-lg">
-                        Ресторан "Узбекистан"
-                    </span>
-
-                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg"
-                        class="h-6 w-6 absolute top-5 transition-all z-50 right-5" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
-
-                    <a target="blank" rel="nofollow" href="http://uzb.kz/">
-                        <img class="rounded-lg hover:opacity-80 transition-all" src="/staticfiles/img/pholio/2.jpg"></a>
-                </div>
-
-
-
-                <div x-data="{ open: false }" @mouseout="open = false" @mouseover="open = true"
-                    class="relative text-white bg-primary rounded-lg">
-                    <span
-                        class="absolute bottom-0 z-50 bg-primary w-full p-5 bg-opacity-30 uppercase text-sm tracking-widest rounded-b-lg">
-                        stia
-                    </span>
-
-                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg"
-                        class="h-6 w-6 absolute top-5 transition-all z-50 right-5" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
-
-                    <a target="blank" rel="nofollow" href="http://stia.kz/">
-                        <img class="rounded-lg hover:opacity-80 transition-all" src="/staticfiles/img/pholio/3.jpg"></a>
-                </div>
-
-
-                <div x-data="{ open: false }" @mouseout="open = false" @mouseover="open = true"
-                    class="relative text-white bg-primary rounded-lg">
-                    <span
-                        class="absolute bottom-0 z-50 bg-primary w-full p-5 bg-opacity-30 uppercase text-sm tracking-widest rounded-b-lg">
-                        sauna-zhanarys-ast
-                    </span>
-
-                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg"
-                        class="h-6 w-6 absolute top-5 transition-all z-50 right-5" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
-
-                    <a target="blank" rel="nofollow" href="https://sauna-zhanarys-ast.kz/">
-                        <img class="rounded-lg hover:opacity-80 transition-all" src="/staticfiles/img/pholio/4.jpg"></a>
-                </div>
-
-                <div x-data="{ open: false }" @mouseout="open = false" @mouseover="open = true"
-                    class="relative text-white bg-primary rounded-lg">
-                    <span
-                        class="absolute bottom-0 z-50 bg-primary w-full p-5 bg-opacity-30 uppercase text-sm tracking-widest rounded-b-lg">
-                        OrdaTrans
-                    </span>
-
-                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg"
-                        class="h-6 w-6 absolute top-5 transition-all z-50 right-5" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
-
-                    <a target="blank" rel="nofollow" href="http://ordatrans.kz">
-                        <img class="rounded-lg hover:opacity-80 transition-all" src="/staticfiles/img/pholio/5.jpg"></a>
-                </div>
-
-
-
-                <div x-data="{ open: false }" @mouseout="open = false" @mouseover="open = true"
-                    class="relative text-white bg-primary rounded-lg">
-                    <span
-                        class="absolute bottom-0 z-50 bg-primary w-full p-5 bg-opacity-30 uppercase text-sm tracking-widest rounded-b-lg">
-                        Rem-Plast
-                    </span>
-
-                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg"
-                        class="h-6 w-6 absolute top-5 transition-all z-50 right-5" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
-
-                    <a target="blank" rel="nofollow" href="https://rem-plast.kz/">
-                        <img class="rounded-lg hover:opacity-80 transition-all" src="/staticfiles/img/pholio/6.jpg"></a>
-                </div>
-
-
-
-                <div x-data="{ open: false }" @mouseout="open = false" @mouseover="open = true"
-                    class="relative text-white bg-primary rounded-lg">
-                    <span
-                        class="absolute bottom-0 z-50 bg-primary w-full p-5 bg-opacity-30 uppercase text-sm tracking-widest rounded-b-lg">
-                        Fontanero
-                    </span>
-
-                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg"
-                        class="h-6 w-6 absolute top-5 transition-all z-50 right-5" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
-
-                    <a target="blank" rel="nofollow" href="https://fontanero.kz/ru/">
-                        <img class="rounded-lg hover:opacity-80 transition-all" src="/staticfiles/img/pholio/7.jpg"></a>
-                </div>
-
-                <div x-data="{ open: false }" @mouseout="open = false" @mouseover="open = true"
-                    class="relative text-white bg-primary rounded-lg">
-                    <span
-                        class="absolute bottom-0 z-50 bg-primary w-full p-5 bg-opacity-30 uppercase text-sm tracking-widest rounded-b-lg">
-                        skincareshop
-                    </span>
-
-                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg"
-                        class="h-6 w-6 absolute top-5 transition-all z-50 right-5" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
-
-                    <a target="blank" rel="nofollow" href="http://skincareshop.kz/">
-                        <img class="rounded-lg hover:opacity-80 transition-all" src="/staticfiles/img/pholio/8.jpg"></a>
-                </div>
-
-
-
-
-            </div>
-
-
-        </div> -->
     </section>
 
 
-    <!-- <section>
-        <div class="container mx-auto bg-primary p-10 rounded-lg">
-            <h1 class="text-5x1">This website is built with Dorik, without writing any code</h1>
-        </div>
-    </section> -->
-
-
-    <!-- <section class="my-20 text-black">
-        <div class="container mx-auto">
-            <div class="text-center w-full pb-10">
-                <h1 class="lg:text-4xl home__sub-title">Этап работы</h1>
-            </div>
-        </div>
-    </section> -->
-
-
 
 
 
@@ -1522,70 +1281,24 @@
 
 
 
-    <footer id="contact" class="bg-primary h-full  bg-marketing">
+    <footer id="contact" class="h-full">
 
 
 
-        <!-- <section id="contact" class="py-20 text-black bg-red  ">
-
-    <div class="overflow-hidden">
-        <div class="background absolute w-full top-0 left-0 z-50">
-            <div class="star1 star"></div>
-            <div class="star2 star"></div>
-            <div class="star3 star"></div>
-            <div class="star4 star"></div>
-        </div>
-        <div class="container mx-auto relative z-50 text-white">
-  
-  
-       
-  
-  
-        </div>
-    </div>
-  </section> -->
-
-        <div class="relative lg:h-full h-screen g:mx-0 mx-5">
+        <div class="footer-feedback__wrapp">
 
             <div class="flex flex-col h-80 w-full">
-
-
                 <div class="flex flex-col items-center w-full pb-10  z-50 absolute -top-20 ">
 
-
-
-
                     <div class="container relative ">
-                        <div
-                            class="lg:py-5 lg:px-10 p-5 bg-opacity-90 bg-help bg-secondary text-white w-full rounded-lg flex lg:flex-row flex-col items-center justify-between relative">
-
-                            <div class="lg:py-10 py-5  flex flex-col lg:items-start items-center">
-
-                                <div class="flex  lg:flex-row flex-col items-center relative z-50">
-                                    <div class="div">
-                                        <div
-                                            class="w-20 h-20 lg:mb-0 mb-10 p-1 bg-white text-primary rounded-full shadow-xl flex items-center justify-center">
-
-                                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M22.7079 21.293C22.889 20.9133 22.9883 20.4998 22.9993 20.0792C23.0103 19.6587 22.9328 19.2405 22.7717 18.8518C22.6107 18.4632 22.3698 18.1127 22.0645 17.8232C21.7593 17.5336 21.3967 17.3115 21.0001 17.1711V10.9993C21.0001 10.7341 20.8947 10.4797 20.7072 10.2922C20.5196 10.1046 20.2653 9.99927 20.0001 9.99927C19.7349 9.99927 19.4805 10.1046 19.293 10.2922C19.1054 10.4797 19.0001 10.7341 19.0001 10.9993V17.1711C18.6165 17.3073 18.2647 17.5201 17.966 17.7965C17.6673 18.0729 17.428 18.4073 17.2626 18.7791C17.0972 19.151 17.0092 19.5526 17.0039 19.9596C16.9987 20.3665 17.0763 20.7703 17.232 21.1463C17.3878 21.5223 17.6184 21.8627 17.9098 22.1468C18.2013 22.4308 18.5475 22.6526 18.9274 22.7986C19.3073 22.9446 19.713 23.0118 20.1196 22.9961C20.5263 22.9803 20.9256 22.882 21.293 22.7071L26.293 27.7071C26.4815 27.8901 26.7344 27.9916 26.9971 27.9897C27.2597 27.9878 27.5111 27.8826 27.6969 27.6968C27.8826 27.5111 27.9878 27.2597 27.9897 26.997C27.9916 26.7343 27.8901 26.4815 27.7071 26.293L22.7079 21.293ZM20.0001 21C19.8023 21 19.609 20.9414 19.4445 20.8315C19.2801 20.7216 19.1519 20.5655 19.0762 20.3827C19.0005 20.2 18.9807 19.9989 19.0193 19.805C19.0579 19.611 19.1531 19.4328 19.293 19.2929C19.4328 19.1531 19.611 19.0578 19.805 19.0193C19.999 18.9807 20.2 19.0005 20.3828 19.0762C20.5655 19.1519 20.7217 19.28 20.8315 19.4445C20.9414 19.6089 21.0001 19.8023 21.0001 20C20.9999 20.2652 20.8944 20.5194 20.707 20.7069C20.5195 20.8944 20.2652 20.9998 20.0001 21Z"
-                                                    fill="#FF0081" />
-                                                <path
-                                                    d="M20 4C11.1633 4 4 11.1633 4 20C4 28.8367 11.1633 36 20 36C28.8367 36 36 28.8367 36 20C36 11.1633 28.8367 4 20 4ZM29.8992 29.8992C27.6088 32.1895 24.5952 33.6147 21.3718 33.9321C18.1484 34.2495 14.9147 33.4393 12.2217 31.6398C9.5286 29.8402 7.54283 27.1625 6.6027 24.063C5.66258 20.9635 5.82626 17.6338 7.06587 14.6414C8.30547 11.6491 10.5443 9.17906 13.4009 7.65232C16.2575 6.12557 19.555 5.63654 22.7318 6.26855C25.9085 6.90056 28.7678 8.61451 30.8225 11.1184C32.8772 13.6222 34.0001 16.761 34 20C34.0051 21.8392 33.6452 23.6612 32.9413 25.3604C32.2374 27.0596 31.2034 28.6023 29.8992 29.8992V29.8992Z"
-                                                    fill="#FF0081" />
-                                                <path
-                                                    d="M20 0C8.95391 0 0 8.95391 0 20C0 31.0461 8.95391 40 20 40C31.0461 40 40 31.0461 40 20C40 8.95391 31.0461 0 20 0ZM32.7281 32.7281C29.5717 35.8752 25.3567 37.7343 20.9044 37.9433C16.452 38.1523 12.0814 36.6961 8.64406 33.8586C5.20672 31.0211 2.94895 27.0055 2.31067 22.5942C1.67239 18.1829 2.69934 13.692 5.1914 9.99653C7.68347 6.30107 11.4621 3.6658 15.7911 2.60421C20.12 1.54262 24.6892 2.13077 28.6082 4.25405C32.5271 6.37732 35.5152 9.88362 36.9902 14.0897C38.4652 18.2958 38.3213 22.9004 36.5867 27.0062C35.6829 29.1453 34.3725 31.0885 32.7281 32.7281V32.7281Z"
-                                                    fill="#FF0081" />
-                                            </svg>
-
-                                        </div>
+                        <div class="bg-help footer-feedback__body">
+                            <div class="footer-feedback__inner">
+                                <div class="footer-feedback__content">
+                                    <div class="footer-feedback__item">
+                                        <img src="img/timer.svg" alt="">
                                     </div>
-
-                                    <div class="pl-5 w-full flex flex-col justify-center items-start">
-                                        <h1
-                                            class="lg:text-4xl text-4xl lg:pb-2 pb-5  lg:text-3x1 font-bold text-lg text-white">
-                                            Узнать цену за 30 минут</h1>
+                                    <div class="footer-feedback__item">
+                                        <h1>Узнать цену за 30 минут</h1>
 
                                         <div class="flex w-full lg:flex-row flex-col items-start w-full">
 
@@ -1598,45 +1311,17 @@
                                             <span class="lg:px-5 py-1 lg:mr-5">
                                                 Сделаем индивидуальный просчет сайта
                                             </span>
-
-
-
-
-
-
-
-
-
-
-
                                         </div>
                                     </div>
                                 </div>
 
                             </div>
 
-                            <div class="relative lg:my-0 my-5 z-50">
-                                <a href="https://wa.me/+79775862120" class="border
-              bg-white
-              w-full
-              text-center
-              text-secondary
-               border-primary
-               border-opacity-20
-               focus:outline-none
-               py-4 px-6 rounded-lg
-               uppercase
-               text-sm
-               tracking-wide
-               font-bold
-            
-               hover:border-none
-               cursor-pointer
-               transition flex
-               items-center ">
+                           
+                                <a href="https://wa.me/+79775862120" class="btn btn-white btn-lg lg:my-0 my-5 z-50">
                                     Написать в whatsapp
                                 </a>
-                            </div>
+                           
 
 
                         </div>
@@ -1663,25 +1348,20 @@
 
 
 
-        <div class="border-t px-10 border-white border-opacity-20 absolute w-full bottom-0 p-5 left-0 z-50">
+        <div class="footer-bottom">
+            <div class="footer-bottom__container">
+                <div class="footer-bottom__logo">
+                    <img src="img/logow.svg" alt="">
+                    <span>WebUnits 2022</span>
 
-            <div class="flex w-full lg:flex-row flex-col w-full items-end lg:justify-between ">
-                <div class="lg:w-1/3 w-full flex lg:justify-start justify-center lg:order-none order-2">
-                    <div class="flex items-center justify-center lg:flex-row flex-col">
-                        <img class="w-[20px] h-[20px] lg:mr-3 lg:mb-0 mb-5" src="img/logow.svg" alt="">
-
-                        <span class="uppercase text-sm tracking-widest text-white ">WebUnits 2022</span>
-                    </div>
                 </div>
 
-                <div class="lg:w-1/3 w-full flex lg:justify-end justify-center lg:order-0 order-2">
-                    <span class="uppercase text-sm tracking-widest text-white lg:py-0 py-3">Все права
-                        защищены</span>
+                <div class="footer-bottom__copyright">
+                    <span>Все права защищены</span>
                 </div>
             </div>
-
-
         </div>
+
         </div>
         </div>
 
@@ -1701,8 +1381,8 @@
                 mousewheel: false,
 
                 navigation: {
-                    prevEl: '.slider__left-arrow',
-                    nextEl: '.slider__right-arrow'
+                    prevEl: '.slider-arrow__left',
+                    nextEl: '.slider-arrow__right'
                 },
 
                 // Responsive breakpoints
